@@ -2,58 +2,75 @@
 
 .center {
   justify-content: center;
-  align-items: center;
+  align-items    : center;
 }
+
 .w100 {
   width: 100%;
 }
+
 .w95 {
   width: 95%;
 }
+
 .w93 {
   width: 93%;
 }
+
 .w90 {
   width: 90%;
 }
+
 .w85 {
   width: 85%;
 }
+
 .w75 {
   width: 75%;
 }
+
 .w50 {
   width: 50%;
 }
+
 .w33 {
   width: 33%;
 }
+
 .w25 {
   width: 25%;
 }
+
 .h100 {
   height: 100%;
 }
+
 .h75 {
   height: 75%;
 }
+
 .h50 {
   height: 50%;
 }
+
 .h30 {
   height: 30%;
 }
+
 .h25 {
   height: 25%;
 }
+
 .fl1 {
-  display: flex;
+  display       : flex;
   flex-direction: column;
 }
+
 .fl2 {
-  display: flex;
+  display       : flex;
   flex-direction: row;
 }
+
 .pr3 {
   padding-right: 3%;
 }
@@ -66,58 +83,58 @@
 
 .b2 {
   border-radius: 30px;
-  border-width: 3px;
-  border-color: #101010;
-  border-style: solid;
+  border-width : 3px;
+  border-color : #101010;
+  border-style : solid;
 }
 
 .neo1 {
   border-radius: 30px;
-  background: #f0f0f0;
-  box-shadow: 5px 5px 10px #606060, -5px -5px 10px #ffffff;
+  background   : #f0f0f0;
+  box-shadow   : 5px 5px 10px #606060, -5px -5px 10px #ffffff;
 }
 
 .neo2 {
   border-radius: 10px;
-  background: #f0f0f0;
-  box-shadow: inset 5px 5px 10px #606060, inset -5px -5px 10px #ffffff;
+  background   : #f0f0f0;
+  box-shadow   : inset 5px 5px 10px #606060, inset -5px -5px 10px #ffffff;
 }
 
 .App {
   text-align: center;
-  min-width: 1000px;
+  min-width : 1000px;
   min-height: 1000px;
 }
 
 .App-header {
   background-color: #f0f0f0;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: calc(0px + 2vmin);
-  color: #101010;
-  font-family: Roboto;
-  font-weight: 300;
-  padding-top: 1vh;
-  padding-left: 1vw;
-  padding-right: 1vw;
-  padding-bottom: 1vh;
+  min-height      : 100vh;
+  align-items     : center;
+  justify-content : flex-start;
+  font-size       : calc(0px + 2vmin);
+  color           : #101010;
+  font-family     : Roboto;
+  font-weight     : 300;
+  padding-top     : 1vh;
+  padding-left    : 1vw;
+  padding-right   : 1vw;
+  padding-bottom  : 1vh;
 }
 
 .Main-content {
   /* background-color: blue; */
-  width: 98vw;
-  height: 98vh;
+  width          : 98vw;
+  height         : 98vh;
   justify-content: space-between;
 }
 
 .First-grid {
   /* background-color: lightgrey; */
-  width: 60vw;
-  height: 98vh;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 1%;
+  width         : 60vw;
+  height        : 98vh;
+  padding-left  : 1%;
+  padding-right : 1%;
+  padding-top   : 1%;
   padding-bottom: 1%;
 }
 
@@ -129,22 +146,23 @@
   /* background-color: azure; */
 }
 
-.g1r1 {
-}
+.g1r1 {}
 
 .g1r11 {
   justify-content: center;
-  align-items: flex-start;
-  padding-left: 5%;
+  align-items    : flex-start;
+  padding-left   : 5%;
 }
+
 .g1r12 {
   justify-content: flex-end;
-  align-items: center;
+  align-items    : center;
 }
+
 .upload-btn {
-  width: 10vw;
-  height: 6vh;
-  margin-top: 1.2vh;
+  width        : 10vw;
+  height       : 6vh;
+  margin-top   : 1.2vh;
   margin-bottom: 1vh;
 }
 
@@ -155,50 +173,51 @@
 /* ------------------------------------------- */
 
 .block2 {
-  height: 59%;
+  height             : 59%;
   /* background-color: bisque; */
 }
 
 .g1r2 {
   justify-content: center;
-  align-items: flex-start;
-  padding-left: 4%;
+  align-items    : flex-start;
+  padding-left   : 4%;
 }
 
 .download {
-  width: 20vw;
-  height: 90%;
+  width          : 20vw;
+  height         : 90%;
   justify-content: center;
 }
 
 .input {
   justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 7%;
-  padding-top: 4%;
-  padding-right: 7%;
-  padding-bottom: 1%;
+  align-items    : flex-start;
+  padding-left   : 7%;
+  padding-top    : 4%;
+  padding-right  : 7%;
+  padding-bottom : 1%;
 }
 
 .g1r4 {
   justify-content: center;
-  align-items: flex-start;
-  padding-left: 4%;
+  align-items    : flex-start;
+  padding-left   : 4%;
 }
 
 .radio-bg {
-  border-radius: 20px;
-  background: #f0f0f0;
-  box-shadow: inset 5px 5px 10px #606060, inset -5px -5px 10px #ffffff;
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-top: 3px;
+  border-radius : 20px;
+  background    : #f0f0f0;
+  box-shadow    : inset 5px 5px 10px #606060, inset -5px -5px 10px #ffffff;
+  padding-left  : 3px;
+  padding-right : 3px;
+  padding-top   : 3px;
   padding-bottom: 3px;
 }
+
 .radio-btn {
   border-radius: 20px;
-  background: #f0f0f0;
-  box-shadow: 5px 5px 10px #606060, -5px -5px 10px #ffffff;
+  background   : #f0f0f0;
+  box-shadow   : 5px 5px 10px #606060, -5px -5px 10px #ffffff;
 }
 
 .radio-btn-text {
@@ -208,7 +227,7 @@
 /* ------------------------------------------- */
 
 .block3 {
-  height: 25%;
+  height             : 25%;
   /* background-color: coral; */
 }
 
@@ -224,11 +243,11 @@
 
 .Second-grid {
   /* background-color: lightgrey; */
-  width: 35vw;
-  height: 98vh;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 1%;
+  width         : 35vw;
+  height        : 98vh;
+  padding-left  : 1%;
+  padding-right : 1%;
+  padding-top   : 1%;
   padding-bottom: 1%;
 }
 
@@ -238,12 +257,12 @@
   padding-top: 1%;
   padding-bottom: 1%; */
   justify-content: space-around;
-  align-items: center;
+  align-items    : center;
 }
 
 .order {
-  padding-left: 4%;
-  padding-top: 4%;
-  padding-right: 7%;
+  padding-left  : 4%;
+  padding-top   : 4%;
+  padding-right : 7%;
   padding-bottom: 3%;
 }

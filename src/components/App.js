@@ -263,10 +263,7 @@ function App() {
                       <Col span={8} className="g1r2 fl1">
                         <div className="fl1 input neo1 w85 h75">
                           <b>A4</b>
-                          <InputNumber
-                            min={0}
-                            max={100}
-                            defaultValue={0}
+                          <InputNumber min={0} max={100} defaultValue={0}
                             className="w100 h30 neo2"
                             size="large"
                           />
@@ -275,10 +272,7 @@ function App() {
                       <Col span={8} className="fl1  g1r2">
                         <div className="fl1 input neo1 w85 h75">
                           <b>A3</b>
-                          <InputNumber
-                            min={0}
-                            max={100}
-                            defaultValue={0}
+                          <InputNumber min={0} max={100} defaultValue={0}
                             className="w100 h30 neo2"
                             size="large"
                           />
@@ -287,10 +281,7 @@ function App() {
                       <Col span={8} className="fl1  g1r2">
                         <div className="fl1 input neo1 w85 h75">
                           <b>A2</b>
-                          <InputNumber
-                            min={0}
-                            max={100}
-                            defaultValue={0}
+                          <InputNumber min={0} max={100} defaultValue={0}
                             className="w100 h30 neo2"
                             size="large"
                           />
@@ -301,10 +292,7 @@ function App() {
                       <Col span={8} className="fl1  g1r2">
                         <div className="fl1 input neo1 w85 h75">
                           <b>A1</b>
-                          <InputNumber
-                            min={0}
-                            max={100}
-                            defaultValue={0}
+                          <InputNumber min={0} max={100} defaultValue={0}
                             className="w100 h30 neo2"
                             size="large"
                           />
@@ -313,10 +301,7 @@ function App() {
                       <Col span={8} className="fl1  g1r2">
                         <div className="fl1 input neo1 w85 h75">
                           <b>A0</b>
-                          <InputNumber
-                            min={0}
-                            max={100}
-                            defaultValue={0}
+                          <InputNumber min={0} max={100} defaultValue={0}
                             className="w100 h30 neo2"
                             size="large"
                           />
@@ -325,10 +310,7 @@ function App() {
                       <Col span={8} className="fl1  g1r2">
                         <div className="fl1 input neo1 w85 h75">
                           <b>A0+</b>
-                          <InputNumber
-                            min={0}
-                            max={100}
-                            defaultValue={0}
+                          <InputNumber min={0} max={100} defaultValue={0}
                             className="w100 h30 neo2"
                             size="large"
                           />
@@ -344,10 +326,7 @@ function App() {
                   <Col span={8} className="fl1  g1r2">
                     <div className="fl1 input neo1 w85 h75">
                       <b>Кол-во томов</b>
-                      <InputNumber
-                        min={0}
-                        max={100}
-                        defaultValue={0}
+                      <InputNumber min={0} max={100} defaultValue={0}
                         className="w100 h30 neo2"
                         size="large"
                       />
