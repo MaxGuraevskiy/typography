@@ -1,20 +1,58 @@
-import * as React from "react"
+import React, { useState } from "react"
 // import { Link } from "gatsby"
 import { Upload, Row, Col, Input, Button, InputNumber } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 
-import СustomRadio2btn from "../components/СustomRadio2btn"
-import СustomRadio4btn from "../components/СustomRadio4btn"
-import Block3 from "../components/Block3"
-import RadioInput from "../components/RadioInput"
 import Registration from "../components/Registration"
+import СustomRadio from "../components/СustomRadio"
+import Block3 from "../components/Block3"
 
 import Seo from "../components/seo"
 
+const colorOptions = ["Ч/Б", "Цвет"]
+const regOption = ["Физическое лицо", "Юридическое лицо"]
+const hourOptions = ["3ч", "6ч", "12ч", "24ч"]
+const typeOptions = [
+  "Супер скоросшиватель",
+  "Пластиковая пружина",
+  "Металлическая пружина",
+  "Архивный переплёт"
+]
+
 const IndexPage = () => {
-  const [role, setRole] = React.useState("first");
-  const [pay, setPay] = React.useState("first");
-  const [reg, setReg] = React.useState("first");
+  const [delivery, setDelivery] = React.useState(0)
+  const [color, setColor] = useState(0)
+  const [role, setRole] = useState(0)
+  const [type, setType] = useState(0)
+  const [hour, setHour] = useState(0)
+  const [reg, setReg] = useState(0)
+  const [pay, setPay] = useState(0)
+
+  const cardPaperSize = (name) => (
+    <Col span={8} className="fl1 g1r2">
+      <div className="fl1 input neo1 w85 h75">
+        <b>{name}</b>
+        <InputNumber min={0} max={100} defaultValue={0}
+          className="w100 h30 neo2" size="large" />
+      </div>
+    </Col>
+  )
+
+  const personalCard = (name) => (
+    <Col span={12} className="g1r2 fl1 ">
+      <div className="fl1 input neo1 w85 h75">
+        <b>{name}</b>
+        <div className="w100 h30 fl1 neo2" />
+      </div>
+    </Col>
+  )
+
+  const orderCard = (name, children) => (
+    <Col span={12} className="g1r2 fl1">
+      <b>{name}</b>
+      {children}
+    </Col>
+  )
 
   return <>
     <Seo title="Home" />
@@ -34,26 +72,22 @@ const IndexPage = () => {
                   <Upload
                     action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                     directory
-                    className="upload h100"
-                  >
+                    className="upload h100">
                     <Button
                       className="upload-btn neo2"
                       size="large"
-                      icon={<UploadOutlined />}
-                    >
+                      icon={<UploadOutlined />}>
                       PDF
                     </Button>
                   </Upload>
                   <Upload
                     action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
                     directory
-                    className="upload h100 center "
-                  >
+                    className="upload h100 center">
                     <Button
                       className="upload-btn neo2"
                       size="large"
-                      icon={<UploadOutlined />}
-                    >
+                      icon={<UploadOutlined />}>
                       DWG
                     </Button>
                   </Upload>
@@ -69,107 +103,68 @@ const IndexPage = () => {
                 <Row className="h50">
                   <Col span={12}>
                     <Row className="h50">
-                      <Col span={8} className="g1r2 fl1">
-                        <div className="fl1 input neo1 w85 h75">
-                          <b>A4</b>
-                          <InputNumber min={0} max={100} defaultValue={0}
-                            className="w100 h30 neo2"
-                            size="large"
-                          />
-                        </div>
-                      </Col>
-                      <Col span={8} className="fl1  g1r2">
-                        <div className="fl1 input neo1 w85 h75">
-                          <b>A3</b>
-                          <InputNumber min={0} max={100} defaultValue={0}
-                            className="w100 h30 neo2"
-                            size="large"
-                          />
-                        </div>
-                      </Col>
-                      <Col span={8} className="fl1  g1r2">
-                        <div className="fl1 input neo1 w85 h75">
-                          <b>A2</b>
-                          <InputNumber min={0} max={100} defaultValue={0}
-                            className="w100 h30 neo2"
-                            size="large"
-                          />
-                        </div>
-                      </Col>
+                      {cardPaperSize("A4")}
+                      {cardPaperSize("A3")}
+                      {cardPaperSize("A2")}
                     </Row>
                     <Row className="h50">
-                      <Col span={8} className="fl1  g1r2">
-                        <div className="fl1 input neo1 w85 h75">
-                          <b>A1</b>
-                          <InputNumber min={0} max={100} defaultValue={0}
-                            className="w100 h30 neo2"
-                            size="large"
-                          />
-                        </div>
-                      </Col>
-                      <Col span={8} className="fl1  g1r2">
-                        <div className="fl1 input neo1 w85 h75">
-                          <b>A0</b>
-                          <InputNumber min={0} max={100} defaultValue={0}
-                            className="w100 h30 neo2"
-                            size="large"
-                          />
-                        </div>
-                      </Col>
-                      <Col span={8} className="fl1  g1r2">
-                        <div className="fl1 input neo1 w85 h75">
-                          <b>A0+</b>
-                          <InputNumber min={0} max={100} defaultValue={0}
-                            className="w100 h30 neo2"
-                            size="large"
-                          />
-                        </div>
-                      </Col>
+                      {cardPaperSize("A1")}
+                      {cardPaperSize("A0")}
+                      {cardPaperSize("A0+")}
                     </Row>
                   </Col>
                   <Col span={12} className="fl1 center">
-                    <div className="fl1 neo1 download"></div>
+                    <div className="fl1 neo1 download" />
                   </Col>
                 </Row>
                 <Row className="h25">
-                  <Col span={8} className="fl1  g1r2">
+                  <Col span={8} className="fl1 g1r2">
                     <div className="fl1 input neo1 w85 h75">
                       <b>Кол-во томов</b>
                       <InputNumber min={0} max={100} defaultValue={0}
-                        className="w100 h30 neo2"
-                        size="large"
-                      />
+                        className="w100 h30 neo2" size="large" />
                     </div>
                   </Col>
                   <Col span={16} className="fl1 g1r4">
-                    <СustomRadio4btn
-                      text1="Супер скоросшиватель"
-                      text2="Пластиковая пружина"
-                      text3="Металлическая пружина"
-                      text4="Архивный переплёт"
-                    />
+                    <СustomRadio
+                      options={typeOptions}
+                      styles={{
+                        outerClasses: "fl2 w93 h75 radio-bg",
+                        innerClasses: "w25 h100"
+                      }}
+                      state={{ get: type, set: setType }} />
                   </Col>
                 </Row>
                 <Row className="h25">
-                  <Col span={8} className="fl1  g1r2">
-                    <СustomRadio2btn text1="Ч/Б" text2="Цвет" />
+                  <Col span={8} className="fl1 g1r2">
+                    <СustomRadio
+                      options={colorOptions}
+                      styles={{
+                        outerClasses: "fl2 w85 h75 radio-bg",
+                        innerClasses: "w50 h100"
+                      }}
+                      state={{ get: color, set: setColor }} />
                   </Col>
-                  <Col span={16} className="fl1  g1r4">
-                    <СustomRadio4btn
-                      text1="3ч"
-                      text2="6ч"
-                      text3="12ч"
-                      text4="24ч"
-                    />
+                  <Col span={16} className="fl1 g1r4">
+                    <СustomRadio
+                      options={hourOptions}
+                      styles={{
+                        outerClasses: "fl2 w93 h75 radio-bg",
+                        innerClasses: "w25 h100"
+                      }}
+                      state={{ get: hour, set: setHour }} />
                   </Col>
                 </Row>
               </div>
             </div>
 
-            <div className="separator2"></div>
+            <div className="separator2" />
 
             {/* блок 3, оплата и выбор оплаты */}
-            <Block3 role={role} setRole={setRole} pay={pay} setPay={setPay} />
+            <Block3
+              pay={pay} setPay={setPay}
+              role={role} setRole={setRole}
+              delivery={delivery} setDelivery={setDelivery} />
           </div>
 
           <div className="Second-grid fl1">
@@ -179,105 +174,56 @@ const IndexPage = () => {
               </div>
               {/* блок 1, вход в личный каб*/}
               <div className="fl2 h50 w100 login-block">
-                <Input
-                  placeholder="Логин"
-                  className="h100 w33 radio-btn"
-                ></Input>
-                <Input
-                  placeholder="Пароль"
-                  className="h100 w33 radio-btn"
-                ></Input>
+                <Input className="h100 w33 radio-btn" placeholder="Логин" />
+                <Input className="h100 w33 radio-btn" placeholder="Пароль" />
                 <Button className="fl1 w25 h100 radio-btn center">Войти</Button>
               </div>
             </div>
 
-            <div className="separator1"></div>
+            <div className="separator1" />
 
             {/* блок 2, */}
             <div className="block2 neo1">
               <Row className="h25">
-                <Col span={12} className="g1r2 fl1 ">
-                  <div className="fl1 input neo1 w85 h75">
-                    <b>Сумма на счету</b>
-                    <div className="w100 h30 fl1 neo2"></div>
-                  </div>
-                </Col>
-                <Col span={12} className="g1r2 fl1 ">
-                  <div className="fl1 input neo1 w85 h75">
-                    <b>Возможный кредит</b>
-                    <div className="w100 h30 fl1 neo2"></div>
-                  </div>
-                </Col>
+                {personalCard("Сумма на счету")}
+                {personalCard("Возможный кредит")}
               </Row>
               <Row className="h25">
-                <Col span={12} className="g1r2 fl1 ">
-                  <div className="fl1 input neo1 w85 h75">
-                    <b>Личная скидка</b>
-                    <div className="w100 h30 fl1 neo2"></div>
-                  </div>
-                </Col>
-                <Col span={12} className="g1r2 fl1 ">
-                  <div className="fl1 input neo1 w85 h75">
-                    <b>Итоговая цена</b>
-                    <div className="w100 h30 fl1 neo2"></div>
-                  </div>
-                </Col>
+                {personalCard("Личная скидка")}
+                {personalCard("Итоговая цена")}
               </Row>
+
               <div className="order w100 h50">
                 <div className="fl1 w100 h100 neo1">
                   <Row className="w95 h50">
-                    <Col span={12} className="g1r2 fl1 pr3">
-                      <b>Номер заказа</b>
+                    {orderCard("Номер заказа", (
                       <Input
                         placeholder="145235"
-                        className="w100 h30 fl1 neo2"
-                      ></Input>
-                    </Col>
-                    <Col span={12} className="g1r2 fl1">
-                      <b>Статус заказа</b>
-                      <div className="w100 h30 fl1 neo2"></div>
-                    </Col>
+                        className="w100 h30 fl1 neo2" />))}
+                    {orderCard("Статус заказа", (<div className="w100 h30 fl1 neo2" />))}
+
                   </Row>
                   <Row className="w95 h50">
-                    <Col span={12} className="g1r2 fl1">
-                      <b>Время доставки</b>
-                      <div className="w100 h30 fl1 neo2"></div>
-                    </Col>
-                    <Col span={12} className="g1r2 fl1">
-                      <b>Файлы</b>
-                      <div className="w100 h30 fl1 neo2"></div>
-                    </Col>
+                    {orderCard("Время доставки", (<div className="w100 h30 fl1 neo2" />))}
+                    {orderCard("Файлы", (<div className="w100 h30 fl1 neo2" />))}
                   </Row>
                 </div>
               </div>
             </div>
 
-            <div className="separator2"></div>
+            <div className="separator2" />
 
             {/* блок 3, */}
             <div className="block3 fl1 neo1">
               <div className="fl2 h25 center">
                 <b>Регистрация</b>
-                <div className="fl2 w85 h75 radio-bg">
-                  <div className="w50 h100">
-                    <RadioInput
-                      value="first"
-                      selected={reg}
-                      text={"Физическое лицо"}
-                      onChange={setReg}
-                      isActive={true}
-                    />
-                  </div>
-                  <div className="w50 h100">
-                    <RadioInput
-                      value="second"
-                      selected={reg}
-                      text={"Юридическое лицо"}
-                      onChange={setReg}
-                      isActive={true}
-                    />
-                  </div>
-                </div>
+                <СustomRadio
+                  options={regOption}
+                  styles={{
+                    outerClasses: "fl2 w85 h75 radio-bg",
+                    innerClasses: "w50 h100"
+                  }}
+                  state={{ get: reg, set: setReg }} />
               </div>
               <Registration reg={reg} />
             </div>
@@ -285,7 +231,6 @@ const IndexPage = () => {
         </div>
       </header>
     </div>
-
   </>
 }
 
