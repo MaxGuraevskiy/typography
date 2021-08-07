@@ -5,26 +5,25 @@ import "./order.css"
 const Bill = () => {
   return (<div id="bill">
     <h2 id="userName">Максим Гураевский Дмитриевич</h2>
-    <div id="input-bills">
-      <div className="input-bill">
-        <input className="input-bill" id="balance" />
-        <label htmlFor="balance">Сумма на счету</label>
-      </div>
-      <div className="input-bill">
-        <input className="input-bill" id="posibleDebt" />
-        <label htmlFor="posibleDebt">Возможный кредит</label>
-      </div>
-      <div className="input-bill">
-        <input className="input-bill" id="personalSale" />
-        <label htmlFor="personalSale">Личная скидка</label>
-      </div>
+
+    <div className="userDetails" id="balance">
+      <p className="userDetails" children={0} />
+      <label htmlFor="balance">Сумма на счету</label>
+    </div>
+    <div className="userDetails" id="possibleDebt">
+      <p className="userDetails" children={0} />
+      <label htmlFor="possibleDebt">Возможный кредит</label>
+    </div>
+    <div className="userDetails" id="personalSale">
+      <p className="userDetails" children={0} />
+      <label htmlFor="personalSale">Личная скидка</label>
     </div>
 
     <div id="priceDiv">
-      <p>Итоговая цена:</p>
-      <p id="price">250 000₽</p>
+      <p className="bill">Итоговая цена:</p>
+      <p className="bill" id="price">250 000₽</p>
     </div>
-    <div>
+    <div id="makeOrderDiv">
       <button id="makeOrder">Заказать</button>
     </div>
   </div>);

@@ -75,13 +75,12 @@ main {
 } */
 
 main>div:last-child {
-  display                 : flex;
-  flex-direction          : column;
-  justify-content         : space-between;
-  <<<<<<< HEAD align-items: stretch;
-  width                   : 40%;
-  =======align-items      : stretch;
-  >>>>>>>76877a1a7afc98f436b7a35f6a413d59675c9ec0
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  align-items    : stretch;
+  width          : 40%;
+  align-items    : stretch;
 }
 
 .item {
@@ -92,10 +91,10 @@ main>div:last-child {
 }
 
 footer {
-  <<<<<<< HEAD height                                    : 5vh;
+  height                                                 : 5vh;
   background-color                                       : var(--palette-black);
-  =======height                                          : 70px;
+  height                                                 : 70px;
   /* background-color                                    : var(--palette-black); */
-  >>>>>>>76877a1a7afc98f436b7a35f6a413d59675c9ec0 display: flex;
+  display                                                : flex;
   flex                                                   : 0 0 auto;
 }
