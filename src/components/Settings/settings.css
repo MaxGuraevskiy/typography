@@ -1,0 +1,21 @@
+h2 {
+  font-family   : 'Jost', sans-serif;
+  font-style    : normal;
+  font-weight   : 500;
+  font-size     : 32px;
+  line-height   : 46px;
+  letter-spacing: 0.02em;
+  margin        : 0;
+}
+
+section#sizes {
+  height: 40%;
+}
+
+section#format {
+  height: 40%;
+}
+
+section#time {
+  height: 15%;
+}

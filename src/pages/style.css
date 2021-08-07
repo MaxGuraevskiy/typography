@@ -40,7 +40,7 @@ body {
 
 header {
   height          : 5vh;
-  background-color: var(--palette-red);
+  /* background-color: var(--palette-red); */
 
   display        : flex;
   flex-direction : row;
@@ -67,9 +67,9 @@ main div:first-child {
   background-color: var(--palette-blue);
 }
 
-main div:nth-child(2) {
+/* main div:nth-child(2) {
   background-color: var(--palette-white);
-}
+} */
 
 main div:last-child {
   background-color: var(--palette-black);
@@ -77,8 +77,8 @@ main div:last-child {
 
 .item {
   width  : 33%;
-  margin : 5px;
-  padding: 5px;
+  /* margin : 5px;
+  padding: 5px; */
   flex   : 0 1 auto;
 }
 
