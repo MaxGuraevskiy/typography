@@ -1,11 +1,12 @@
 h2#userName {
-  color         : #FFFFFF;
+  color         : var(--palette-white);
   font-family   : 'Open Sans', sans-serif;
   font-style    : normal;
   font-weight   : normal;
   font-size     : 32px;
   line-height   : 44px;
   letter-spacing: 0.02em;
+  grid-area     : userName;
 }
 
 h3 {
@@ -26,8 +27,112 @@ p {
   letter-spacing: 0.02em;
 }
 
+label {
+  font-family   : 'Open Sans', sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 18px;
+  line-height   : 25px;
+  letter-spacing: 0.02em;
+  color         : #FFFFFF80;
+}
+
+div#bill {
+  font-family: 'Open Sans', sans-serif;
+  color      : var(--palette-white);
+
+  display            : grid;
+  grid-template-areas: "userName userName userName userName userName userName userName userName"
+    "col1 col1 col1 col2 col2 col3 col3 col3"
+    "price price price price button button button button";
+  /* display        : flex;
+  flex-direction    : column;
+  justify-content   : space-between;
+  align-items       : center; */
+}
+
+div#bill>div>p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+div#input-bills {
+  font-family: 'Open Sans', sans-serif;
+
+  /* display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  align-content  : space-between; */
+}
+
+div.input-bill {
+  font-family: 'Open Sans', sans-serif;
+
+  /* display       : flex;
+  flex-direction   : column; */
+}
+
+input.input-bill {
+  background-color: transparent;
+  border          : none;
+  outline         : none;
+  border-bottom   : 2px solid var(--palette-white);
+  color           : var(--palette-white);
+
+  font-family   : 'Open Sans', sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 18px;
+  line-height   : 25px;
+  letter-spacing: 0.02em;
+
+  width: 85%;
+}
+
+
+#price {
+  font-style    : normal;
+  font-weight   : 600;
+  font-size     : 32px;
+  line-height   : 44px;
+  letter-spacing: 0.02em;
+}
+
+#priceDiv {
+  grid-area: price;
+}
+
+#balance {
+  grid-area: col1;
+}
+
+#posibleDebt {
+  grid-area: col2;
+}
+
+#personalSale {
+  grid-area: col3;
+}
+
+#makeOrder {
+  font-family   : 'Open Sans', sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 24px;
+  line-height   : 33px;
+  letter-spacing: 0.02em;
+  border-radius : 10px;
+  width         : 200px;
+  height        : 60px;
+  outline       : none;
+  border        : none;
+  background    : #0058ED;
+  color         : white;
+  grid-area     : button;
+}
+
 #orderDetails {
-  height        : 50%;
+  height: 50%;
+
   display       : flex;
   flex-direction: row;
   align-items   : center;
