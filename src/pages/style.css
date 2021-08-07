@@ -1,0 +1,92 @@
+/** Шрифты */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+/*? Подключение
+  font-family     : 'Jost', sans-serif;
+  font-family     : 'Open Sans', sans-serif;
+  font-family     : 'PT Mono', monospace;
+  font-family     : 'Merriweather', serif; Для личного кабинета
+*/
+
+/*? Лицензия Google Fonts
+  Торжественно клянусь, что замышляю только шалость
+*/
+
+/** Цветовая палитра */
+:root {
+  --palette-background: #E5E5E5;
+  --palette-blue      : #0058ED;
+  --palette-black     : #000000;
+  --palette-white     : #F7F7F7;
+  --palette-red       : #F23824;
+}
+
+/**------------------*/
+html {
+  height          : 100%;
+  background-color: var(--palette-background);
+}
+
+body {
+  padding: 0;
+  margin : 0;
+  height : 100%;
+  width  : 100%;
+}
+
+
+header {
+  height          : 5vh;
+  background-color: var(--palette-red);
+
+  display        : flex;
+  flex-direction : row;
+  flex-wrap      : nowrap;
+  align-content  : stretch;
+  justify-content: space-between;
+  align-items    : baseline;
+  flex           : 0 0 auto;
+}
+
+
+main {
+  height: 90vh;
+
+  display        : flex;
+  flex-direction : row;
+  align-items    : stretch;
+  justify-content: space-between;
+  align-content  : stretch;
+  flex-wrap      : nowrap;
+}
+
+main div:first-child {
+  background-color: var(--palette-blue);
+}
+
+main div:nth-child(2) {
+  background-color: var(--palette-white);
+}
+
+main div:last-child {
+  background-color: var(--palette-black);
+}
+
+.item {
+  width  : 33%;
+  margin : 5px;
+  padding: 5px;
+  flex   : 0 1 auto;
+}
+
+
+footer {
+  height          : 5vh;
+  background-color: var(--palette-black);
+
+  display: flex;
+  flex   : 0 0 auto;
+}

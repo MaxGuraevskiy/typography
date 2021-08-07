@@ -1,0 +1,70 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Dell\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add use-sound
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Dell\bin;D:\OS\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\WIDCOMM\Bluetooth Software;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;C:\Program Files\Microsoft SQL Server\120\DTS\Binn;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Program Files\dotnet;C:\Users\Dell\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\Dell\AppData\Local\Programs\Python\Python39;C:\Users\Dell\AppData\Local\Microsoft\WindowsApps;C:\Users\Dell\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Dell\AppData\Roaming\npm;C:\Program Files\JetBrains\CLion 2020.2.4\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.4\bin;D:\GIS\vcpkg\downloads\tools\perl\5.30.0.1\c\bin;D:\GIS\vcpkg\downloads\tools\perl\5.30.0.1\perl\site\bin;D:\GIS\vcpkg\downloads\tools\perl\5.30.0.1\perl\bin;C:\Users\Dell\.dotnet\tools;C:\Program Files\heroku\bin;D:\pyCharm\PyCharm 2021.1.3\bin;C;D:\Users\Dell\.yarn\bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'D:\projects\Typography\node_modules\sharp\build\Release\libvips-42.dll'
+
+npm manifest: 
+  {
+    "name": "gatsby-starter-default",
+    "private": true,
+    "description": "A simple starter to get up and developing quickly with Gatsby",
+    "version": "0.1.0",
+    "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+    "dependencies": {
+      "gatsby": "^3.10.2",
+      "gatsby-plugin-gatsby-cloud": "^2.10.0",
+      "gatsby-plugin-image": "^1.10.1",
+      "gatsby-plugin-manifest": "^3.10.0",
+      "gatsby-plugin-offline": "^4.10.0",
+      "gatsby-plugin-react-helmet": "^4.10.0",
+      "gatsby-plugin-sharp": "^3.10.2",
+      "gatsby-source-filesystem": "^3.10.0",
+      "gatsby-transformer-sharp": "^3.10.0",
+      "prop-types": "^15.7.2",
+      "react": "^17.0.1",
+      "react-dom": "^17.0.1",
+      "react-helmet": "^6.1.0"
+    },
+    "devDependencies": {
+      "prettier": "2.3.2"
+    },
+    "keywords": [
+      "gatsby"
+    ],
+    "license": "0BSD",
+    "scripts": {
+      "build": "gatsby build",
+      "develop": "gatsby develop",
+      "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+      "start": "npm run develop",
+      "serve": "gatsby serve",
+      "clean": "gatsby clean",
+      "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    },
+    "bugs": {
+      "url": "https://github.com/gatsbyjs/gatsby/issues"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
