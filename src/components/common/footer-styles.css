@@ -1,0 +1,69 @@
+@media screen and (max-width: 1000px) {
+  .logo-block {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+  }
+  .IP-text {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .mr60 {
+    margin-right: 20px !important;
+  }
+}
+
+.footer {
+  background: black;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-item {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.logo-block {
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
+.mr60 {
+  margin-right: 60px;
+}
+
+.text {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.IP-text {
+  font-size: 22px;
+  color: var(--palette-gray);
+  max-width: 369px;
+  line-height: 27px;
+}
+
+.name-block {
+  margin-left: 51px;
+  margin-right: 51px;
+}
+
+.btn-text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  color: var(--palette-white);
+}
+
+.btn-block {
+  margin-left: 32px;
+  margin-right: 32px;
+}

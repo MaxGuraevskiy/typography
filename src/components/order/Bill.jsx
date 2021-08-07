@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react"
 
-import './order.css'
+import "./order.css"
 
 const Bill = () => {
   return (<div id="bill">
@@ -30,4 +30,4 @@ const Bill = () => {
   </div>);
 }
 
-export default Bill;
+export default Bill
