@@ -61,16 +61,19 @@ main {
   flex-wrap: nowrap;
 }
 
-main div:first-child {
+/* main div:nth-child(1) {
   background-color: var(--palette-blue);
-}
+} */
 
 /* main div:nth-child(2) {
   background-color: var(--palette-white);
 } */
 
-main div:last-child {
-  background-color: var(--palette-black);
+main>div:last-child {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  align-items    : stretch;
 }
 
 .item {
