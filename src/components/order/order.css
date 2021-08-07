@@ -1,0 +1,49 @@
+h2#userName {
+  color         : #FFFFFF;
+  font-family   : 'Open Sans', sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 32px;
+  line-height   : 44px;
+  letter-spacing: 0.02em;
+}
+
+h3 {
+  font-family   : 'Jost', sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 24px;
+  line-height   : 35px;
+  letter-spacing: 0.02em;
+}
+
+p {
+  font-family   : 'PT Mono', monospace;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 21px;
+  line-height   : 29px;
+  letter-spacing: 0.02em;
+}
+
+#orderDetails {
+  height        : 50%;
+  display       : flex;
+  flex-direction: row;
+  align-items   : center;
+}
+
+#map {
+  background-color: var(--palette-black);
+  height          : calc(100% - 4rem);
+  width           : 50%;
+  margin          : 2rem;
+}
+
+#bill {
+  padding               : 25px;
+  border-top-left-radius: 50px;
+  background            : var(--palette-black);
+  box-shadow            : -3px -2px 4px rgb(0 0 0 / 25%);
+  height                : 40%;
+}

@@ -39,7 +39,7 @@ body {
 
 
 header {
-  height          : 5vh;
+  height             : 5vh;
   /* background-color: var(--palette-red); */
 
   display        : flex;
@@ -63,23 +63,26 @@ main {
   flex-wrap      : nowrap;
 }
 
-main div:first-child {
+/* main div:nth-child(1) {
   background-color: var(--palette-blue);
-}
+} */
 
 /* main div:nth-child(2) {
   background-color: var(--palette-white);
 } */
 
-main div:last-child {
-  background-color: var(--palette-black);
+main>div:last-child {
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  align-items    : stretch;
 }
 
 .item {
-  width  : 33%;
+  width     : 33%;
   /* margin : 5px;
-  padding: 5px; */
-  flex   : 0 1 auto;
+  padding   : 5px; */
+  flex      : 0 1 auto;
 }
 
 
