@@ -1,48 +1,24 @@
-/** Шрифты */
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=PT+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
-
-/*? Подключение
-  font-family     : 'Jost', sans-serif;
-  font-family     : 'Open Sans', sans-serif;
-  font-family     : 'PT Mono', monospace;
-  font-family     : 'Merriweather', serif; Для личного кабинета
-*/
-
-/*? Лицензия Google Fonts
-  Торжественно клянусь, что замышляю только шалость
-*/
-
-/** Цветовая палитра */
-:root {
-  --palette-background: #e5e5e5;
-  --palette-blue: #0058ed;
-  --palette-black: #030303;
-  --palette-white: #f7f7f7;
-  --palette-red: #f23824;
-}
-
 .header {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  font-family: Jost;
-  font-style: normal;
-  font-weight: normal;
 }
 
 .header-item {
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 100%;
-  align-items: center;
+  align-items: baseline;
+}
+
+.text {
+  font-family: Jost;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .name-text {
@@ -65,7 +41,7 @@
   align-items: center;
   padding-left: 20px;
   padding-right: 10px;
-  background: #f23924;
+  background: var(--palette-red);
   border-radius: 0px 0px 0px 30px;
 }
 

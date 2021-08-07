@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react"
 
-import nds from '../../images/order-nds.svg';
+import nds from "../../images/order-nds.svg"
 
-const ChoiceNDS = (_) => {
-  return (<img src={nds} alt="НДС" />);
+const ChoiceNDS = _ => {
+  return <img src={nds} alt="НДС" />
 }
 
-export default ChoiceNDS;
+export default ChoiceNDS

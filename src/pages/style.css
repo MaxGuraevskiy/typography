@@ -21,13 +21,18 @@
   --palette-blue: #0058ed;
   --palette-black: #000000;
   --palette-white: #f7f7f7;
-  --palette-red: #f23824;
+  --palette-red: #f23924;
+  --palette-gray: #b9b9b9;
 }
 
 /**------------------*/
 html {
   height: 100%;
   background-color: var(--palette-background);
+  min-width: 1366px;
+  max-width: 3840px;
+  min-height: 768px;
+  max-height: 2160px;
 }
 
 body {
@@ -51,7 +56,7 @@ header {
 }
 
 main {
-  height: calc(100vh - 70px);
+  height: calc(100vh - 140px);
 
   display: flex;
   flex-direction: row;
@@ -69,11 +74,11 @@ main {
   background-color: var(--palette-white);
 } */
 
-main>div:last-child {
-  display        : flex;
-  flex-direction : column;
+main > div:last-child {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items    : stretch;
+  align-items: stretch;
 }
 
 .item {
@@ -84,8 +89,8 @@ main>div:last-child {
 }
 
 footer {
-  height: 5vh;
-  background-color: var(--palette-black);
+  height: 70px;
+  /* background-color: var(--palette-black); */
 
   display: flex;
   flex: 0 0 auto;
