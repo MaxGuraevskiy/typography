@@ -11,8 +11,9 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "deploy": "gatsby build && firebase deploy --only hosting",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean" 
   },
   "dependencies": {
     "gatsby": "^3.11.0",
