@@ -74,11 +74,13 @@ main {
   background-color: var(--palette-white);
 } */
 
-main > div:last-child {
-  display: flex;
-  flex-direction: column;
+main>div:last-child {
+  display        : flex;
+  flex-direction : column;
   justify-content: space-between;
-  align-items: stretch;
+  align-items    : stretch;
+  width          : 40%;
+  align-items    : stretch;
 }
 
 .item {

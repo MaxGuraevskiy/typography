@@ -1,12 +1,9 @@
-h2#userName {
-  color: var(--palette-white);
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 44px;
-  letter-spacing: 0.02em;
-  grid-area: userName;
+/** Блок с картой */
+#map {
+  background-color: var(--palette-black);
+  height          : calc(100% - 4rem);
+  width           : 50%;
+  margin          : 2rem;
 }
 
 h3 {
@@ -18,87 +15,30 @@ h3 {
   letter-spacing: 0.02em;
 }
 
-p {
-  font-family: "PT Mono", monospace;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 21px;
-  line-height: 29px;
-  letter-spacing: 0.02em;
-}
 
-label {
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 25px;
-  letter-spacing: 0.02em;
-  color: #ffffff80;
-}
+/** Блок с кнопкой заказа*/
 
 div#bill {
-  font-family: "Open Sans", sans-serif;
-  color: var(--palette-white);
-
-  display: grid;
-  grid-template-areas:
-    "userName userName userName userName userName userName userName userName"
-    "col1 col1 col1 col2 col2 col3 col3 col3"
-    "price price price price button button button button";
-  /* display        : flex;
-  flex-direction    : column;
-  justify-content   : space-between;
-  align-items       : center; */
-}
-
-div#bill > div > p {
-  font-family: "Open Sans", sans-serif;
-}
-
-div#input-bills {
-  font-family: "Open Sans", sans-serif;
-
-  /* display        : flex;
-  flex-direction : row;
-  justify-content: space-between;
-  align-content  : space-between; */
-}
-
-div.input-bill {
-  font-family: "Open Sans", sans-serif;
-
-  /* display       : flex;
-  flex-direction   : column; */
-}
-
-input.input-bill {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid var(--palette-white);
-  color: var(--palette-white);
-
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 25px;
-  letter-spacing: 0.02em;
-
-  width: 85%;
-}
-
-#price {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 32px;
-  line-height: 44px;
-  letter-spacing: 0.02em;
+  padding-left          : 2.6rem;
+  border-top-left-radius: 50px;
+  background            : var(--palette-black);
+  box-shadow            : -3px -2px 4px rgb(0 0 0 / 25%);
+  height                : 40%;
+  padding-top           : 1.5rem;
+  z-index               : 2;
+  font-family           : 'Open Sans', sans-serif;
+  color                 : var(--palette-white);
+  display               : grid;
+  grid-template-areas   :
+    "userName userName userName userName userName userName userName userName userName"
+    "col1 col1 col1 col2 col2 col2 col3 col3 col3"
+    "price price price price price price button button button";
 }
 
 #priceDiv {
-  grid-area: price;
+  display    : grid;
+  align-items: end;
+  grid-area  : price;
 }
 
 #balance {
@@ -113,6 +53,14 @@ input.input-bill {
   grid-area: col3;
 }
 
+#makeOrderDiv {
+  grid-area     : button;
+  display       : grid;
+  vertical-align: bottom;
+  align-content : stretch;
+  align-items   : end;
+}
+
 #makeOrder {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
@@ -120,14 +68,13 @@ input.input-bill {
   font-size: 24px;
   line-height: 33px;
   letter-spacing: 0.02em;
-  border-radius: 10px;
-  width: 200px;
-  height: 60px;
-  outline: none;
-  border: none;
-  background: #0058ed;
-  color: white;
-  grid-area: button;
+  border-radius : 10px;
+  width         : 200px;
+  height        : 60px;
+  outline       : none;
+  border        : none;
+  background    : #0058ED;
+  color         : white;
 }
 
 #orderDetails {
@@ -138,17 +85,60 @@ input.input-bill {
   align-items: center;
 }
 
-#map {
-  background-color: var(--palette-black);
-  height: calc(100% - 4rem);
-  width: 50%;
-  margin: 2rem;
+#price {
+  font-style    : normal;
+  font-weight   : 600;
+  font-size     : 32px;
+  line-height   : 44px;
+  letter-spacing: 0.02em;
 }
 
-#bill {
-  padding: 25px;
-  border-top-left-radius: 50px;
-  background: var(--palette-black);
-  box-shadow: -3px -2px 4px rgb(0 0 0 / 25%);
-  height: 40%;
+label {
+  font-family   : 'Open Sans', sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 18px;
+  line-height   : 25px;
+  letter-spacing: 0.02em;
+  color         : #FFFFFF80;
+}
+
+h2#userName {
+  color         : var(--palette-white);
+  font-family   : 'Open Sans', sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 32px;
+  line-height   : 44px;
+  letter-spacing: 0.02em;
+  grid-area     : userName;
+}
+
+
+p.bill {
+  font-family   : 'PT Mono', monospace;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 21px;
+  line-height   : 29px;
+  letter-spacing: 0.02em;
+  margin        : 0;
+}
+
+p.userDetails {
+  background-color: transparent;
+  border          : none;
+  outline         : none;
+  border-bottom   : 2px solid var(--palette-white);
+  color           : var(--palette-white);
+  font-family     : 'Open Sans', sans-serif;
+  font-style      : normal;
+  font-weight     : normal;
+  font-size       : 18px;
+  line-height     : 25px;
+  letter-spacing  : 0.02em;
+  width           : 85%;
+  line-height     : 2.5rem;
+  margin-bottom   : 0.5rem;
+  margin-top      : 0rem;
 }
