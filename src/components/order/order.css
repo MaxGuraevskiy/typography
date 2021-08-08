@@ -142,3 +142,10 @@ p.userDetails {
   margin-bottom   : 0.5rem;
   margin-top      : 0rem;
 }
+
+/** Создаём уголок*/
+#angle {
+  position: absolute;
+  right   : 37.7%;
+  bottom  : 70px;
+}

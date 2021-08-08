@@ -1,4 +1,5 @@
 import React from "react"
+import angle from '../../images/angle.svg';
 
 import "./order.css"
 
@@ -26,6 +27,8 @@ const Bill = () => {
     <div id="makeOrderDiv">
       <button id="makeOrder">Заказать</button>
     </div>
+
+    <img id="angle" src={angle} alt="Уголочек" />
   </div>);
 }
 
