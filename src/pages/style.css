@@ -66,28 +66,28 @@ main {
   flex-wrap      : nowrap;
 }
 
-/* main div:nth-child(1) {
-  background-color: var(--palette-blue);
-} */
+main>div:nth-child(1) {
+  width: 27%;
+}
 
-/* main div:nth-child(2) {
-  background-color: var(--palette-white);
-} */
+main>div:nth-child(2) {
+  width: 34%;
+}
 
 main>div:last-child {
   display        : flex;
   flex-direction : column;
   justify-content: space-between;
   align-items    : stretch;
-  width          : 40%;
+  width          : 39%;
   align-items    : stretch;
 }
 
 .item {
-  width     : 33%;
+  /* width     : 33%; */
   /* margin : 5px;
   padding   : 5px; */
-  flex      : 0 1 auto;
+  flex: 0 1 auto;
 }
 
 footer {
