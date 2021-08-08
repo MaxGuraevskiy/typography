@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import "./choice-time-styles.css"
 
+const timeOptions = ["3ч", "6ч", "12ч", "24ч"]
+
 const ChoiceTime = () => {
   const [selected, setSelected] = useState("3ч")
 
@@ -12,7 +14,7 @@ const ChoiceTime = () => {
   return (
     <>
       <div className="container">
-        {["3ч", "6ч", "12ч", "24ч"].map((x, i) => (
+        {timeOptions.map((x, i) => (
           <>
             <input
               type="radio"
@@ -25,11 +27,12 @@ const ChoiceTime = () => {
             />
             <label key={i} htmlFor={`tab${i + 1}`} className="choiceTime">
               {x}
-            </label>{" "}
+            </label>
+            {i !== timeOptions.length - 1 && <div className="palka" />}
           </>
         ))}
 
-        <div className="line"></div>
+        <div className="line" />
       </div>
     </>
   )

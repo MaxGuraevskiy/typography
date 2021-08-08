@@ -1,77 +1,90 @@
 .container {
-  width: 400px;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width    : 400px;
+  position : relative;
   font-size: 0;
-  box-shadow: 0 0 100px RGBa(0, 0, 0, 0.5);
-  border-radius: 3px;
-  overflow: hidden;
+  display  : flex;
+  overflow : hidden;
 }
 
-.container > label.choiceTime {
-  color: black;
+.container>label.choiceTime {
+  color: var(--palette-black);
 }
 
 .line {
-  position: absolute;
-  height: 2px;
-  background: #1e88e5;
-  width: 25%;
-  top: 34px;
-  left: 0;
-  transition: 0.25s ease;
+  position     : absolute;
+  border-radius: 5px;
+  height       : 2px;
+  background   : #1e88e5;
+  width        : 20%;
+  margin-left  : 2.5%;
+  margin-right : 2.5%;
+  top          : 34px;
+  left         : 5%;
+  transition   : 0.25s ease;
+}
+
+.palka {
+  margin-top   : 5.5px;
+  border-radius: 5px;
+  width        : 2px;
+  opacity      : 30%;
+  background   : var(--palette-black);
+  height       : 25px;
 }
 
 .choiceTime {
   display: none;
 }
-input:checked + label.choiceTime {
-  background: #eee;
+
+input:checked+label.choiceTime {
+  /* background: #eee; */
 }
 
-input#tab1:checked ~ .line {
+input#tab1:checked~.line {
   left: 0%;
 }
 
-input#tab2:checked ~ .line {
+input#tab2:checked~.line {
   left: 25%;
 }
 
-input#tab3:checked ~ .line {
+input#tab3:checked~.line {
   left: 50%;
 }
 
-input#tab4:checked ~ .line {
+input#tab4:checked~.line {
   left: 75%;
 }
 
 label.choiceTime {
-  display: inline-block;
-  font-size: 16px;
-  height: 36px;
-  line-height: 36px;
-  width: 25%;
-  text-align: center;
-  background: #f4f4f4;
-  color: black;
-  position: relative;
-  transition: 0.25s background ease;
-  cursor: pointer;
+  display       : inline-block;
+  font-size     : 16px;
+  height        : 36px;
+  line-height   : 36px;
+  width         : 25%;
+  text-align    : center;
+  /* background : #f4f4f4; */
+  color         : black;
+  position      : relative;
+  transition    : 0.25s background ease;
+  cursor        : pointer;
 }
+
 label.choiceTime::after {
-  content: "";
-  height: 2px;
-  width: 100%;
-  position: absolute;
-  display: block;
-  background: #ccc;
-  bottom: 0;
-  opacity: 0;
-  left: 0;
-  transition: 0.25s ease;
+  content     : "";
+  height      : 2px;
+  width       : 80%;
+  margin-left : 10%;
+  margin-right: 10%;
+  position    : absolute;
+  display     : block;
+  background  : var(--palette-gray);
+  opacity     : 0;
+  bottom      : 0;
+  left        : 0;
+  transition  : 0.25s ease;
 }
+
 label.choiceTime:hover::after {
   opacity: 1;
 }
