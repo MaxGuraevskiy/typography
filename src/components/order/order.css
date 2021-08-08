@@ -7,11 +7,11 @@
 }
 
 h3 {
-  font-family: "Jost", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 35px;
+  font-family   : "Jost", sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 24px;
+  line-height   : 35px;
   letter-spacing: 0.02em;
 }
 
@@ -23,7 +23,7 @@ div#bill {
   border-top-left-radius: 50px;
   background            : var(--palette-black);
   box-shadow            : -3px -2px 4px rgb(0 0 0 / 25%);
-  height                : 40%;
+  height                : calc(40% + 2px);
   padding-top           : 1.5rem;
   z-index               : 2;
   font-family           : 'Open Sans', sans-serif;
@@ -62,11 +62,11 @@ div#bill {
 }
 
 #makeOrder {
-  font-family: "Open Sans", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 33px;
+  font-family   : "Open Sans", sans-serif;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 24px;
+  line-height   : 33px;
   letter-spacing: 0.02em;
   border-radius : 10px;
   width         : 200px;
@@ -80,9 +80,9 @@ div#bill {
 #orderDetails {
   height: 50%;
 
-  display: flex;
+  display       : flex;
   flex-direction: row;
-  align-items: center;
+  align-items   : center;
 }
 
 #price {
@@ -146,6 +146,6 @@ p.userDetails {
 /** Создаём уголок*/
 #angle {
   position: absolute;
-  right   : 37.7%;
+  right   : 38.95%;
   bottom  : 70px;
 }
