@@ -1,7 +1,10 @@
-import React from 'react';
+import React from "react"
 
 const ChoiceFormat = () => {
-  return (<></>);
+  return (
+    <>
+    </>
+  )
 }
 
-export default ChoiceFormat;
+export default ChoiceFormat
