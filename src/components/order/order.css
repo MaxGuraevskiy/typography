@@ -1,48 +1,49 @@
 h2#userName {
-  color         : var(--palette-white);
-  font-family   : 'Open Sans', sans-serif;
-  font-style    : normal;
-  font-weight   : normal;
-  font-size     : 32px;
-  line-height   : 44px;
+  color: var(--palette-white);
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 44px;
   letter-spacing: 0.02em;
-  grid-area     : userName;
+  grid-area: userName;
 }
 
 h3 {
-  font-family   : 'Jost', sans-serif;
-  font-style    : normal;
-  font-weight   : normal;
-  font-size     : 24px;
-  line-height   : 35px;
+  font-family: "Jost", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 35px;
   letter-spacing: 0.02em;
 }
 
 p {
-  font-family   : 'PT Mono', monospace;
-  font-style    : normal;
-  font-weight   : normal;
-  font-size     : 21px;
-  line-height   : 29px;
+  font-family: "PT Mono", monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 29px;
   letter-spacing: 0.02em;
 }
 
 label {
-  font-family   : 'Open Sans', sans-serif;
-  font-style    : normal;
-  font-weight   : normal;
-  font-size     : 18px;
-  line-height   : 25px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
   letter-spacing: 0.02em;
-  color         : #FFFFFF80;
+  color: #ffffff80;
 }
 
 div#bill {
-  font-family: 'Open Sans', sans-serif;
-  color      : var(--palette-white);
+  font-family: "Open Sans", sans-serif;
+  color: var(--palette-white);
 
-  display            : grid;
-  grid-template-areas: "userName userName userName userName userName userName userName userName"
+  display: grid;
+  grid-template-areas:
+    "userName userName userName userName userName userName userName userName"
     "col1 col1 col1 col2 col2 col3 col3 col3"
     "price price price price button button button button";
   /* display        : flex;
@@ -51,12 +52,12 @@ div#bill {
   align-items       : center; */
 }
 
-div#bill>div>p {
-  font-family: 'Open Sans', sans-serif;
+div#bill > div > p {
+  font-family: "Open Sans", sans-serif;
 }
 
 div#input-bills {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   /* display        : flex;
   flex-direction : row;
@@ -65,7 +66,7 @@ div#input-bills {
 }
 
 div.input-bill {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 
   /* display       : flex;
   flex-direction   : column; */
@@ -73,27 +74,26 @@ div.input-bill {
 
 input.input-bill {
   background-color: transparent;
-  border          : none;
-  outline         : none;
-  border-bottom   : 2px solid var(--palette-white);
-  color           : var(--palette-white);
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--palette-white);
+  color: var(--palette-white);
 
-  font-family   : 'Open Sans', sans-serif;
-  font-style    : normal;
-  font-weight   : normal;
-  font-size     : 18px;
-  line-height   : 25px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
   letter-spacing: 0.02em;
 
   width: 85%;
 }
 
-
 #price {
-  font-style    : normal;
-  font-weight   : 600;
-  font-size     : 32px;
-  line-height   : 44px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
   letter-spacing: 0.02em;
 }
 
@@ -105,7 +105,7 @@ input.input-bill {
   grid-area: col1;
 }
 
-#posibleDebt {
+#possibleDebt {
   grid-area: col2;
 }
 
@@ -114,41 +114,41 @@ input.input-bill {
 }
 
 #makeOrder {
-  font-family   : 'Open Sans', sans-serif;
-  font-style    : normal;
-  font-weight   : normal;
-  font-size     : 24px;
-  line-height   : 33px;
+  font-family: "Open Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 33px;
   letter-spacing: 0.02em;
-  border-radius : 10px;
-  width         : 200px;
-  height        : 60px;
-  outline       : none;
-  border        : none;
-  background    : #0058ED;
-  color         : white;
-  grid-area     : button;
+  border-radius: 10px;
+  width: 200px;
+  height: 60px;
+  outline: none;
+  border: none;
+  background: #0058ed;
+  color: white;
+  grid-area: button;
 }
 
 #orderDetails {
   height: 50%;
 
-  display       : flex;
+  display: flex;
   flex-direction: row;
-  align-items   : center;
+  align-items: center;
 }
 
 #map {
   background-color: var(--palette-black);
-  height          : calc(100% - 4rem);
-  width           : 50%;
-  margin          : 2rem;
+  height: calc(100% - 4rem);
+  width: 50%;
+  margin: 2rem;
 }
 
 #bill {
-  padding               : 25px;
+  padding: 25px;
   border-top-left-radius: 50px;
-  background            : var(--palette-black);
-  box-shadow            : -3px -2px 4px rgb(0 0 0 / 25%);
-  height                : 40%;
+  background: var(--palette-black);
+  box-shadow: -3px -2px 4px rgb(0 0 0 / 25%);
+  height: 40%;
 }

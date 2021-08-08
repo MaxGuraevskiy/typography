@@ -17,53 +17,53 @@
 
 /** Цветовая палитра */
 :root {
-  --palette-background: #e5e5e5;
-  --palette-blue      : #0058ed;
-  --palette-black     : #000000;
-  --palette-white     : #f7f7f7;
-  --palette-red       : #f23924;
-  --palette-gray      : #b9b9b9;
+  --palette-background: #f7f7f7;
+  --palette-blue: #0058ed;
+  --palette-black: #000000;
+  --palette-white: #f7f7f7;
+  --palette-red: #f23924;
+  --palette-gray: #b9b9b9;
 }
 
 /**------------------*/
 html {
-  height          : 100%;
+  height: 100%;
   background-color: var(--palette-background);
-  min-width       : 1366px;
-  max-width       : 3840px;
-  min-height      : 768px;
-  max-height      : 2160px;
+  min-width: 1366px;
+  max-width: 3840px;
+  min-height: 768px;
+  max-height: 2160px;
 }
 
 body {
   padding: 0;
-  margin : 0;
-  height : 100%;
-  width  : 100%;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 header {
-  height             : 70px;
+  height: 70px;
   /* background-color: var(--palette-red); */
 
-  display        : flex;
-  flex-direction : row;
-  flex-wrap      : nowrap;
-  align-content  : stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: stretch;
   justify-content: space-between;
-  align-items    : baseline;
-  flex           : 0 0 auto;
+  align-items: baseline;
+  flex: 0 0 auto;
 }
 
 main {
   height: calc(100vh - 140px);
 
-  display        : flex;
-  flex-direction : row;
-  align-items    : stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   justify-content: space-between;
-  align-content  : stretch;
-  flex-wrap      : nowrap;
+  align-content: stretch;
+  flex-wrap: nowrap;
 }
 
 /* main div:nth-child(1) {
@@ -74,28 +74,24 @@ main {
   background-color: var(--palette-white);
 } */
 
-main>div:last-child {
-  display                 : flex;
-  flex-direction          : column;
-  justify-content         : space-between;
-  <<<<<<< HEAD align-items: stretch;
-  width                   : 40%;
-  =======align-items      : stretch;
-  >>>>>>>76877a1a7afc98f436b7a35f6a413d59675c9ec0
+main > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
 }
 
 .item {
-  width     : 33%;
+  width: 33%;
   /* margin : 5px;
-  padding   : 5px; */
-  flex      : 0 1 auto;
+  padding: 5px; */
+  flex: 0 1 auto;
 }
 
 footer {
-  <<<<<<< HEAD height                                    : 5vh;
-  background-color                                       : var(--palette-black);
-  =======height                                          : 70px;
-  /* background-color                                    : var(--palette-black); */
-  >>>>>>>76877a1a7afc98f436b7a35f6a413d59675c9ec0 display: flex;
-  flex                                                   : 0 0 auto;
+  height: 70px;
+  /* background-color: var(--palette-black); */
+
+  display: flex;
+  flex: 0 0 auto;
 }
