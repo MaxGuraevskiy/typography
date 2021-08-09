@@ -47,23 +47,18 @@ const ChoiceSizes = () => {
   return (<>
     <div className="choice-sizes-container">
       {sizeOptions.map((x, i) => (
-        <>
-          <div className="choice-size-item">
-            <div className="choice-size-item-body" onClick={() => inputEl.current.focus()}>
-              <label className="paper-size">{x}</label>
-              <div className="choice-size-input-group">
-                <label className="paper-size-count-btn" onClick={() => isValid(+value - 1, 0, 100) && setValue(+value - 1)} htmlFor={`size-tab${i + 1}`}>-</label>
-                <NaturalInput value={value} min={0} max={100} onChange={setValue} className="choice-size-input" id={`size-tab${i + 1}`} inputEl={inputEl} />
-                <label className="paper-size-count-btn paper-size-count-plus" onClick={() => isValid(+value + 1, 0, 100) && setValue(+value + 1)} htmlFor={`size-tab${i + 1}`}>+</label>
-              </div>
+        <div className="choice-size-item" key={i}>
+          <div className="choice-size-item-body" onClick={() => inputEl.current.focus()}>
+            <label className="paper-size">{x}</label>
+            <div className="choice-size-input-group">
+              <label className="paper-size-count-btn" onClick={() => isValid(+value - 1, 0, 100) && setValue(+value - 1)} htmlFor={`size-tab${i + 1}`}>-</label>
+              <NaturalInput value={value} min={0} max={100} onChange={setValue} className="choice-size-input" id={`size-tab${i + 1}`} inputEl={inputEl} />
+              <label className="paper-size-count-btn paper-size-count-plus" onClick={() => isValid(+value + 1, 0, 100) && setValue(+value + 1)} htmlFor={`size-tab${i + 1}`}>+</label>
             </div>
-            <img src={horizontall_line} />
           </div>
-        </>
+          <img src={horizontall_line} />
+        </div>
       ))}
-
-
-
 
     </div>
   </>);
