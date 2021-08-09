@@ -63,6 +63,12 @@ label.paper-size-count-btn {
     justify-content: center;
 
     cursor: pointer;
+
+    -webkit-user-select: none;
+    -moz-user-select   : none;
+    -khtml-user-select : none;
+    -ms-user-select    : none;
+    user-select        : none;
 }
 
 label.paper-size-count-plus {
@@ -91,4 +97,8 @@ input.invalid:focus {
 
 input.natural-input {
     display: none;
+}
+
+img.size-tab1+div>div>input#size-tab1:hover {
+    background: blue;
 }

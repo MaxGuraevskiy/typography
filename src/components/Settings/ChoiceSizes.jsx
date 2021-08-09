@@ -4,48 +4,33 @@ import horizontall_line from '../../images/horizontall-line.svg'
 
 // import NaturalInput from './NaturalInput';
 
-const isValid = (value, min, max) =>
-  value !== '' &&
-  // value !== '-' &&
-  (min === undefined || value >= min) &&
-  (max === undefined || value <= max);
+const isValid = (value, min, max) => {
+  console.log('isValid :>> ', min, value);
+  return value !== '' &&
+    (min === undefined || value >= min) &&
+    (max === undefined || value <= max);
+}
 
-const NaturalInput = ({ value, min, max, onChange, id, inputEl }) => {
+const NaturalInput = ({ value, min, max, onChange, id, className, inputEl }) => {
   // Для целых чисел
-  // const regexp = new RegExp(`^-?[0-9]*$`);
-  const regexp = new RegExp(`^[0-9]*$`);
-  const [internalValue, setInternalValue] = useState(value);
-  const [valid, setValid] = useState(isValid(value, min, max));
+  const regexp = new RegExp(`^[0-9]*$`); //? new RegExp(`^-?[0-9]*$`);
   return (
     <input
       ref={inputEl}
       type="text"
-      // className={valid ? 'natural-input' : 'invalid'}/
-      className={valid ? 'paper-size-count' : 'invalid'}
-      value={internalValue}
+      //! className={valid ? 'natural-input' : 'invalid'}
+      className={className}
+      value={value}
+      // className={valid ? 'paper-size-count' : 'invalid'}
       id={id}
-      onChange={(event) => {
+      onChange={event => {
         const newValue = event.target.value;
-        if (regexp.test(newValue)) {
-          setInternalValue(newValue);
-          let newValid = isValid(newValue, min, max);
-          setValid(newValid);
-          if (newValid) {
-            onChange(newValue);
-          }
-        }
+        if (regexp.test(newValue) && isValid(newValue, min, max))
+          onChange(newValue);
       }}
       onBlur={() => {
-        if (internalValue < min) {
-          onChange(min)
-          // setInternalValue(min);
-        } else if (internalValue > max) {
-          onChange(max)
-          // setInternalValue(max);
-        } else {
-          setInternalValue(value);
-        }
-        setValid(true);
+        if (value < min) onChange(min)
+        if (value > max) onChange(max)
       }}
     />
   );
@@ -54,7 +39,8 @@ const NaturalInput = ({ value, min, max, onChange, id, inputEl }) => {
 const sizeOptions = ["A4:", "A3:", "A2:", "A1:", "A0:", "A0+:",]
 
 const ChoiceSizes = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0)
+  // const [status, setStatus] = useState("Neutral")
   const inputEl = useRef(null)
   return (<>
     <div className="choice-sizes-container">
@@ -63,13 +49,15 @@ const ChoiceSizes = () => {
         <div className="choice-size-item-body" onClick={() => inputEl.current.focus()}>
           <label className="paper-size">A4:</label>
           <div className="choice-size-input-group">
-            <label className="paper-size-count-btn" onClick={() => setValue(value - 1)} htmlFor={"size-tab1"}>-</label>
-            <NaturalInput value={value} min={0} max={100} onChange={(value) => setValue(value)} id={"size-tab1"} inputEl={inputEl} />
-            {/* <label className="paper-size-count" htmlFor={"size-tab1"}>{value}</label> */}
-            <label className="paper-size-count-btn paper-size-count-plus" onClick={() => setValue(value + 1)} htmlFor={"size-tab1"}>+</label>
+            <label className="paper-size-count-btn" onClick={() => isValid(+value - 1, 0, 100) && setValue(+value - 1)} htmlFor={"size-tab1"}>-</label>
+            <NaturalInput value={value} min={0} max={100} onChange={setValue} className="size-tab1" id={"size-tab1"} inputEl={inputEl} />
+            <label className="paper-size-count-btn paper-size-count-plus" onClick={() => isValid(+value + 1, 0, 100) && setValue(+value + 1)} htmlFor={"size-tab1"}>+</label>
           </div>
         </div>
-        <img src={horizontall_line} />
+        <img className="size-tab1" src={horizontall_line} />
+        <div className="choice-size-item-body">
+
+        </div>
       </div>
     </div>
   </>);
