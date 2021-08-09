@@ -9,7 +9,7 @@ import './order.css'
 
 const Order = () => {
   return (<>
-    <div style={{ background: "coral", height: "10%" }}>Выбор юр/физ лицо</div>
+    <div style={{ height: "10%" }}>Выбор юр/физ лицо</div>
     <div id="orderDetails">
       <div style={{ width: "50%" }}>
         <ChoiceNDS />
