@@ -1,9 +1,10 @@
 .container {
-  width    : 400px;
-  position : relative;
-  font-size: 0;
-  display  : flex;
-  overflow : hidden;
+  width     : 80%;
+  margin-top: 20px;
+  position  : relative;
+  font-size : 0;
+  display   : flex;
+  overflow  : hidden;
 }
 
 .container>label.choiceTime {
@@ -32,7 +33,7 @@
   height       : 25px;
 }
 
-.choiceTime {
+.choice-time-input {
   display: none;
 }
 
@@ -40,19 +41,19 @@ input:checked+label.choiceTime {
   /* background: #eee; */
 }
 
-input#tab1:checked~.line {
+input#time-tab1:checked~.line {
   left: 0%;
 }
 
-input#tab2:checked~.line {
+input#time-tab2:checked~.line {
   left: 25%;
 }
 
-input#tab3:checked~.line {
+input#time-tab3:checked~.line {
   left: 50%;
 }
 
-input#tab4:checked~.line {
+input#time-tab4:checked~.line {
   left: 75%;
 }
 
@@ -68,6 +69,15 @@ label.choiceTime {
   position      : relative;
   transition    : 0.25s background ease;
   cursor        : pointer;
+
+  font-family: Jost;
+  font-style : normal;
+  font-weight: normal;
+  font-size  : 24px;
+  line-height: 35px;
+  /* identical to box height */
+
+  letter-spacing: 0.02em;
 }
 
 label.choiceTime::after {

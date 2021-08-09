@@ -21,11 +21,11 @@ const ChoiceTime = () => {
               value={x}
               checked={selected === x}
               onChange={selectedHandler}
-              id={`tab${i + 1}`}
-              name="tab"
-              className="choiceTime"
+              id={`time-tab${i + 1}`}
+              name="time-tab"
+              className="choice-time-input"
             />
-            <label key={i} htmlFor={`tab${i + 1}`} className="choiceTime">
+            <label key={i} htmlFor={`time-tab${i + 1}`} className="choiceTime">
               {x}
             </label>
             {i !== timeOptions.length - 1 && <div className="palka" />}

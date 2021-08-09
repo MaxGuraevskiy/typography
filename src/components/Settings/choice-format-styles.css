@@ -1,0 +1,54 @@
+.choice-format-container {
+    width     : 90%;
+    margin-top: 20px;
+    position  : relative;
+    font-size : 0;
+    display   : flex;
+    overflow  : hidden;
+    flex-wrap : wrap;
+}
+
+.container>label.choiceTime {
+    color: var(--palette-black);
+}
+
+.choice-format-btn {
+    display: none;
+}
+
+input:checked+label.choice-format-label {
+    background: rgba(0, 88, 237, 0.2);
+    transition: 0.5s background ease;
+}
+
+label.choice-format-label {
+    font-family   : Open Sans;
+    font-style    : normal;
+    font-weight   : normal;
+    font-size     : 21px;
+    line-height   : 29px;
+    text-align    : center;
+    letter-spacing: 0.02em;
+    /* background : #f4f4f4; */
+    color         : var(--palette-black);
+
+    border       : 1.5px solid rgba(0, 0, 0, 0.2);
+    box-sizing   : border-box;
+    filter       : drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.3));
+    border-radius: 10px;
+    width        : 250px;
+    height       : 100px;
+
+    padding: 20px;
+    margin : 10px;
+
+    position  : relative;
+    transition: 0.25s background ease;
+
+    cursor: pointer;
+}
+
+label.choice-format-label:hover {
+    background: var(--palette-lightgray);
+
+}
