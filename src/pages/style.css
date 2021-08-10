@@ -24,13 +24,13 @@
   --palette-red       : #f23924;
   --palette-gray      : #b9b9b9;
   --palette-lightgray : #dfdfdf;
-
 }
 
 /**------------------*/
 html {
   height          : 100%;
   background-color: var(--palette-background);
+  /*! Удалить при создании мобилки-дибилки */
   min-width       : 1366px;
   max-width       : 3840px;
   min-height      : 768px;

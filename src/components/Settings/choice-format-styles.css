@@ -1,9 +1,11 @@
 /** Позиционирование */
 .choice-format-container {
-  padding-right: 16%;
-  margin-top   : 20px;
   font-size    : 0;
+  margin-top   : 20px;
+  padding-left : 11px;
+  padding-right: 16%;
   display      : grid;
+  grid-gap     : 20px;
   grid-template-areas:
     "top-left top-right"
     "bottom-left bottom-right";
@@ -46,7 +48,6 @@
   /* width              : 10vw; */
   height                : 100px;
   padding               : 20px;
-  margin                : 10px;
 }
 
 /** Наведение и поведение */

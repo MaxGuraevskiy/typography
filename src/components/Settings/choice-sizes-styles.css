@@ -1,110 +1,112 @@
 .choice-sizes-container {
-    width     : 90%;
-    margin-top: 20px;
-    position  : relative;
-    font-size : 0;
-    display   : flex;
-    overflow  : hidden;
-    flex-wrap : wrap;
+  width       : 90%;
+  padding-left: 11px;
+  margin-top  : 20px;
+  position    : relative;
+  font-size   : 0;
+  display     : flex;
+  overflow    : hidden;
+  flex-wrap   : wrap;
 }
 
 div.choice-size-item {
-    display        : flex;
-    flex-direction : column;
-    width          : 250px;
-    height         : 50px;
-    justify-content: space-between;
-    margin-right   : 32px;
-    margin-bottom  : 15px;
+  display        : flex;
+  flex-direction : column;
+  width          : 250px;
+  height         : 50px;
+  justify-content: space-between;
+  margin-right   : 32px;
+  margin-bottom  : 15px;
 }
 
 div.choice-size-item-body {
-    display           : flex;
-    flex-direction    : row;
-    width             : 100%;
-    max-height        : 50px;
-    height            : 45px;
-    /* background     : yellow; */
-    justify-content   : space-between;
+  display           : flex;
+  flex-direction    : row;
+  width             : 100%;
+  max-height        : 50px;
+  height            : 45px;
+  /* background     : yellow; */
+  justify-content   : space-between;
 }
 
 label.paper-size {
-    width    : 46px;
-    height   : 41px;
-    /* margin: 0px; */
+  /* width : 46px; */
+  /* margin: 0px; */
 
-    font-family   : Open Sans;
-    font-style    : normal;
-    font-weight   : normal;
-    font-size     : 30px;
-    line-height   : 41px;
-    /* identical to box height */
-    color         : var(--palette-black);
-    letter-spacing: 0.02em;
+  height        : 41px;
+  font-family   : Open Sans;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 30px;
+  line-height   : 41px;
+  /* identical to box height */
+  color         : var(--palette-black);
+  letter-spacing: 0.02em;
 }
 
 div.choice-size-input-group {
-    width             : 200px;
-    height            : 41px;
-    display           : flex;
-    justify-content   : flex-end;
-    flex-direction    : row;
-    /* background     : #000; */
+  height         : 41px;
+  display        : flex;
+  justify-content: flex-end;
+  flex-direction : row;
+
+  /* width             : 200px; */
+  /* background        : #000; */
 }
 
-label.paper-size-count-btn {
-    font-family    : Open Sans;
-    font-style     : normal;
-    font-weight    : normal;
-    font-size      : 24px;
-    color          : var(--palette-black);
-    line-height    : 41px;
-    margin-left    : 10px;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
+/** Элементы контроля  */
+input.choice-size-input {
+  font-family    : PT Mono;
+  font-style     : normal;
+  font-weight    : normal;
+  font-size      : 24px;
+  letter-spacing : 0.02em;
+  color          : var(--palette-black);
+  margin-left    : 10px;
+  width          : 10%;
+  max-width      : 130px;
+  line-height    : 41px;
+  padding-top    : 5px;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  background     : transparent;
+  border         : none;
+  box-sizing     : border-box;
+}
 
-    cursor: pointer;
+label.paper-size-count-minus,
+label.paper-size-count-plus {
+  font-family    : Open Sans;
+  font-style     : normal;
+  font-weight    : normal;
+  font-size      : 24px;
+  color          : var(--palette-black);
+  line-height    : 41px;
+  margin-left    : 10px;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
 
-    -webkit-user-select: none;
-    -moz-user-select   : none;
-    -khtml-user-select : none;
-    -ms-user-select    : none;
-    user-select        : none;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select   : none;
+  -khtml-user-select : none;
+  -ms-user-select    : none;
+  user-select        : none;
 }
 
 label.paper-size-count-plus {
-    padding-top: 3px;
+  padding-top: 3px;
 }
 
-.choice-size-input {
-    font-family    : PT Mono;
-    font-style     : normal;
-    font-weight    : normal;
-    font-size      : 24px;
-    letter-spacing : 0.02em;
-    color          : var(--palette-black);
-    margin-left    : 10px;
-    max-width      : 130px;
-    line-height    : 41px;
-    padding-top    : 5px;
-    display        : flex;
-    align-items    : center;
-    justify-content: center;
-    background     : transparent;
-    border         : none;
-    box-sizing     : border-box;
-    /* width       : fit-content; */
+/** При вводе значения загорается палка  */
+input:focus-within {
+  outline: none;
 }
 
-input.invalid:focus {
-    outline-color: darkred;
-}
-
-input.natural-input {
-    display: none;
-}
-
-img.size-tab1+div>div>input#size-tab1:hover {
-    background: blue;
+img.inputing {
+  background: deepskyblue;
+  transition: 0.5s background ease;
 }

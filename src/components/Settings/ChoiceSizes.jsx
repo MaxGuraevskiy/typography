@@ -5,63 +5,76 @@ import horizontall_line from '../../images/horizontall-line.svg'
 // import NaturalInput from './NaturalInput';
 
 const isValid = (value, min, max) => {
-  console.log('isValid :>> ', min, value);
+  // console.log('isValid :>> ', min, value);
   return value !== '' &&
     (min === undefined || value >= min) &&
     (max === undefined || value <= max);
 }
 
-const NaturalInput = ({ value, min, max, onChange, id, className, inputEl }) => {
+const NaturalInput = ({ value, min, max, onChange, id, className, inputRef, setActice }) => {
   const regexp = new RegExp(`^[0-9]*$`); //? new RegExp(`^-?[0-9]*$`);
-  return (
 
+  function onChange(e) {
+    console.log(e.target.value);
+    if (e.target.value === undefined) return
+    const newValue = +e.target.value;
+    if (regexp.test(newValue) && isValid(newValue, min, max))
+      onChange(newValue);
+  }
+
+  function onBlur() {
+    if (value < min) onChange(min)
+    if (value > max) onChange(max)
+    setActice(false)
+  }
+
+  function onFocus() {
+    setActice(true)
+  }
+
+  return (
     <input
-      ref={inputEl}
+      onFocus={onFocus}
+      ref={inputRef}
       type="text"
       className={className}
       value={value}
-      // className={valid ? 'paper-size-count' : 'invalid'}
       id={id}
-      onChange={event => {
-        const newValue = event.target.value;
-        if (regexp.test(newValue) && isValid(newValue, min, max))
-          onChange(newValue);
-      }}
-      onBlur={() => {
-        if (value < min) onChange(min)
-        if (value > max) onChange(max)
-      }}
-
-    />
-
-
-  );
-};
+      onChange={onChange}
+      onBlur={onBlur}
+    />)
+}
 
 const sizeOptions = ["A4:", "A3:", "A2:", "A1:", "A0:", "A0+:",]
 
 const ChoiceSizes = () => {
+
+  //* Подсчёт по кнопкам
+  function count(change) {
+    return () => isValid(+value + +change, 0, 100) && setValue(+value + +change)
+  }
+
   const [value, setValue] = useState(0)
-  // const [status, setStatus] = useState("Neutral")
-  const inputEl = useRef(null)
+  const [active, setActice] = useState(false)
+  const inputRef = useRef(null)
   return (<>
     <div className="choice-sizes-container">
       {sizeOptions.map((x, i) => (
         <div className="choice-size-item" key={i}>
-          <div className="choice-size-item-body" onClick={() => inputEl.current.focus()}>
-            <label className="paper-size">{x}</label>
+          <div className="choice-size-item-body" onClick={() => inputRef.current.focus()}>
+            <label className="paper-size" children={x} />
             <div className="choice-size-input-group">
-              <label className="paper-size-count-btn" onClick={() => isValid(+value - 1, 0, 100) && setValue(+value - 1)} htmlFor={`size-tab${i + 1}`}>-</label>
-              <NaturalInput value={value} min={0} max={100} onChange={setValue} className="choice-size-input" id={`size-tab${i + 1}`} inputEl={inputEl} />
-              <label className="paper-size-count-btn paper-size-count-plus" onClick={() => isValid(+value + 1, 0, 100) && setValue(+value + 1)} htmlFor={`size-tab${i + 1}`}>+</label>
+              <label onClick={count(-1)} htmlFor={`size-tab${i + 1}`} children={"-"} className="paper-size-count-minus" />
+              <NaturalInput value={value} min={0} max={100} onChange={setValue} className="choice-size-input" id={`size-tab${i + 1}`} inputRef={inputRef} setActice={setActice} />
+              <label onClick={count(+1)} htmlFor={`size-tab${i + 1}`} children={"+"} className="paper-size-count-plus" />
             </div>
           </div>
-          <img src={horizontall_line} />
+          <img className={active ? "inputing" : ""} src={horizontall_line} />
         </div>
       ))}
 
     </div>
-  </>);
+  </>)
 }
 
 export default ChoiceSizes;

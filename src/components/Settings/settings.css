@@ -9,13 +9,15 @@ h2 {
 }
 
 section#sizes {
-  height: 40%;
+  margin-top: 5%;
+  height    : 35%;
 }
 
 section#format {
-  height: 40%;
+  margin-top: 2.5%;
+  height    : 40%;
 }
 
 section#time {
-  height: 15%;
+  height: 19.25%;
 }
