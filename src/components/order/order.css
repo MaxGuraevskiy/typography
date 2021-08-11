@@ -35,6 +35,86 @@ div#bill {
     "price price price price price price button button button";
 }
 
+.nds-container {
+  width     : 85%;
+  margin-top: 20px;
+  position  : relative;
+  font-size : 0;
+  display   : flex;
+  overflow  : hidden;
+}
+
+.container>label.choiceNDS {
+  color: var(--palette-black);
+}
+
+.nds-line {
+  position     : absolute;
+  border-radius: 5px;
+  height       : 2px;
+  background   : #1e88e5;
+  width        : 40%;
+  margin-left  : 5%;
+  margin-right : 5%;
+  top          : 34px;
+  left         : 5%;
+  transition   : 0.25s ease;
+}
+
+.choice-nds-input {
+  display: none;
+}
+
+input#nds-tab1:checked~.nds-line {
+  left: 0%;
+}
+
+input#nds-tab2:checked~.nds-line {
+  left: 50%;
+}
+
+label.choiceNDS {
+  display       : inline-block;
+  font-size     : 16px;
+  height        : 36px;
+  line-height   : 36px;
+  width         : 50%;
+  text-align    : center;
+  /* background : #f4f4f4; */
+  color         : black;
+  position      : relative;
+  transition    : 0.25s background ease;
+  cursor        : pointer;
+
+  font-family: Jost;
+  font-style : normal;
+  font-weight: normal;
+  font-size  : 24px;
+  line-height: 35px;
+  /* identical to box height */
+
+  letter-spacing: 0.02em;
+}
+
+label.choiceNDS::after {
+  content     : "";
+  height      : 2px;
+  width       : 80%;
+  margin-left : 10%;
+  margin-right: 10%;
+  position    : absolute;
+  display     : block;
+  background  : var(--palette-gray);
+  opacity     : 0;
+  bottom      : 0;
+  left        : 0;
+  transition  : 0.25s ease;
+}
+
+label.choiceNDS:hover::after {
+  opacity: 1;
+}
+
 #priceDiv {
   display    : grid;
   align-items: end;
@@ -123,6 +203,26 @@ p.bill {
   line-height   : 29px;
   letter-spacing: 0.02em;
   margin        : 0;
+}
+
+h3.address {
+  font-family   : Jost;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 24px;
+  line-height   : 35px;
+  letter-spacing: 0.02em;
+  color         : var(--palette-black);
+}
+
+p.address {
+  font-family   : PT Mono;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 21px;
+  line-height   : 29px;
+  letter-spacing: 0.02em;
+  color         : rgba(0, 0, 0, 0.7);
 }
 
 p.userDetails {
