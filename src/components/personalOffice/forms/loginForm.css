@@ -1,0 +1,156 @@
+/** Выбор между логином и регистрацией  */
+
+.wrapper {
+  padding: 0% 5%;
+}
+
+.toggle_radio {
+  position             : relative;
+  background           : #f5f5f5;
+  overflow             : hidden;
+  padding              : 0 !important;
+  -webkit-border-radius: 50px;
+  -moz-border-radius   : 50px;
+  border-radius        : 50px;
+  position             : relative;
+  height               : 40px;
+  width                : 100%;
+}
+
+.toggle_radio input[type=radio] {
+  display: none;
+}
+
+.toggle_radio label {
+  position           : relative;
+  z-index            : 1;
+  display            : inline-block;
+  height             : 40px;
+  width              : calc(50% - 6px);
+  margin             : 3px 3px;
+  text-align         : center;
+  border-radius      : 50px;
+  cursor             : pointer;
+  font-family        : Open Sans;
+  font-style         : normal;
+  font-weight        : normal;
+  font-size          : 20px;
+  line-height        : 36px;
+  color              : rgba(0, 0, 0, 0.3);
+  -webkit-user-select: none;
+  -ms-user-select    : none;
+  user-select        : none;
+}
+
+.toggle_option_slider {
+  z-index   : 0;
+  width     : 50%;
+  height    : 34px;
+  position  : absolute;
+  top       : 3px;
+  background: var(--palette-blue);
+
+  -webkit-border-radius: 50px;
+  -moz-border-radius   : 50px;
+  border-radius        : 50px;
+
+  -webkit-transition: all .4s ease;
+  -moz-transition   : all .4s ease;
+  -o-transition     : all .4s ease;
+  -ms-transition    : all .4s ease;
+  transition        : all .4s ease;
+}
+
+#toggle_1:checked~.toggle_option_slider {
+  background: var(--palette-blue);
+  left      : 3px;
+}
+
+#toggle_2:checked~.toggle_option_slider {
+  background: var(--palette-blue);
+  left      : calc(50% - 3px);
+}
+
+#toggle_1:checked~label[for=toggle_1],
+#toggle_2:checked~label[for=toggle_2] {
+  animation-duration: .4s;
+  animation-delay   : 0ms;
+  animation-name    : colorChangeIn;
+  color             : var(--palette-white);
+}
+
+#toggle_1:not(:checked)~label[for=toggle_1],
+#toggle_2:not(:checked)~label[for=toggle_2] {
+  animation-duration: .4s;
+  animation-delay   : 0ms;
+  animation-name    : colorChangeOut;
+  color             : rgba(0, 0, 0, 0.3);
+}
+
+
+@keyframes colorChangeIn {
+  0% {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  60% {
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  100% {
+    color: var(--palette-white);
+  }
+}
+
+@keyframes colorChangeOut {
+  0% {
+    color: var(--palette-white);
+  }
+
+  60% {
+    color: var(--palette-white);
+  }
+
+  100% {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/** Логин */
+
+form#loginForm {
+  display        : flex;
+  flex-direction : column;
+  justify-content: center;
+  margin-top     : 4vh;
+}
+
+form#loginForm input {
+  border        : none;
+  height        : 53px;
+  font-family   : Open Sans;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 20px;
+  line-height   : 27px;
+  letter-spacing: 0.02em;
+  color         : #FFFFFF;
+  background    : transparent;
+  padding       : 0px 5px;
+}
+
+form#loginForm input::placeholder {
+  color: #ffffffaa;
+}
+
+form#loginForm #password {
+  margin-bottom: 4vh;
+}
+
+hr.divider {
+  border       : 2px solid #F5F5F5;
+  width        : 100%;
+  border-radius: 4px;
+  margin-bottom: 2vh;
+  margin-top   : 0;
+}

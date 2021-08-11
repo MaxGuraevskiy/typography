@@ -44,12 +44,10 @@ const InputSize = ({ sizeName, id }) => {
   function logKey(e) {
     if (!active) return
 
-    if (e.code === "ArrowUp") {
+    if (e.code === "ArrowUp")
       isValid(+value + 1, 0, 100) && setValue(x => x + 1)
-    }
-    if (e.code === "ArrowDown") {
+    if (e.code === "ArrowDown")
       isValid(+value - 1, 0, 100) && setValue(x => x - 1)
-    }
     if (e.code === "Escape") {
       ref.current.blur()
       setActive(false)

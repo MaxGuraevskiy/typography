@@ -21,6 +21,8 @@ section#account-form {
 }
 
 h4.account-form-header {
+  margin-block-end: 25px;
+
   font-family   : Merriweather;
   font-style    : normal;
   font-weight   : normal;
@@ -35,6 +37,7 @@ div.account-form-header {
 }
 
 img.account-form-header {
+  cursor  : pointer;
   position: absolute;
   top     : -3px;
   width   : 30px;

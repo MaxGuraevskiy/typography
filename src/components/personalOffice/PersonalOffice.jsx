@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Account from './Account';
 import LoadFiles from './LoadFiles';
-import LoginForm from './LoginForm';
+import LoginForm from './forms/LoginForm';
 import "./personalOffice.css"
 
 import logout from "../../images/logout.svg"
 
 const PersonalOffice = () => {
-  const [login, setLogin] = useState(true)
+  const [login, setLogin] = useState(false)
 
   return (
     <div id="PersonalOffice">
@@ -18,11 +18,11 @@ const PersonalOffice = () => {
             <img className="account-form-header" alt="Выйти" src={logout}
               onClick={() => setLogin(false)} />}
         </div>
-        {login ? <Account /> : <LoginForm />}
+        {login ? <Account /> : <LoginForm setLogin={setLogin} />}
       </section>
 
       {login && <LoadFiles />}
     </div>);
 }
 
-export default PersonalOffice;
+export default PersonalOffice
