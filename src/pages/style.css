@@ -17,19 +17,18 @@
 
 /** Цветовая палитра */
 :root {
-  --palette-background: #f7f7f7;
-  --palette-blue      : #0058ed;
-  --palette-black     : #000000;
-  --palette-white     : #f7f7f7;
-  --palette-red       : #f23924;
-  --palette-gray      : #b9b9b9;
-  --palette-lightgray : #dfdfdf;
+  --palette-blue     : #0058ed;
+  --palette-black    : #000000;
+  --palette-white    : #f7f7f7;
+  --palette-red      : #f23924;
+  --palette-gray     : #b9b9b9;
+  --palette-lightgray: #dfdfdf;
 }
 
 /**------------------*/
 html {
   height          : 100%;
-  background-color: var(--palette-background);
+  background-color: var(--palette-white);
   /*! Удалить при создании мобилки-дибилки */
   min-width       : 1366px;
   max-width       : 3840px;
@@ -98,4 +97,8 @@ footer {
 
   display: flex;
   flex   : 0 0 auto;
+}
+
+button {
+  cursor: pointer;
 }

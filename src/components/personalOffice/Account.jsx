@@ -39,8 +39,10 @@ const Account = () => {
           active={active} setActive={setActive} />
       )}
     </div>
-    <div className="newOrder">
-      <button className="newOrder">Создать заказ</button>
+    <div className="account-btn">
+      <button className="account-btn">
+        Создать заказ
+      </button>
     </div>
   </>);
 }
