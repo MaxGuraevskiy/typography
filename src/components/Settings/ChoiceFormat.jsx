@@ -16,7 +16,7 @@ const ChoiceFormat = () => {
     <div className="choice-format-container">
       {formatOptions.map((x, i) => (
         <button key={i}
-          className={"choice-format-btn " + (selected === x ? "selected" : "")}
+          className={"choice-format-btn " + (selected === x ? "choice-format-btn-selected" : "")}
           onClick={() => setSelected(formatOptions[i])}
           children={x} />
       ))}

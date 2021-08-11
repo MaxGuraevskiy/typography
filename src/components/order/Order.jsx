@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 
 import ChoiceNDS from './ChoiceNDS';
-import ChoiceDelivery from './ChoiceDelivery';
 import Bill from './Bill';
 import Map from './Map';
 import './order.css'
 
-const regOptions = ["Физическое лицо", "Юридическое лицо"]
+const ndsOptions = ["Физическое лицо", "Юридическое лицо"]
 
 const Order = () => {
 
-  const [selected, setSelected] = useState(regOptions[0])
+  const [selected, setSelected] = useState(ndsOptions[0])
 
   const selectedHandler = e => {
     setSelected(e.target.value)
@@ -18,34 +17,31 @@ const Order = () => {
   }
 
   return (<>
-    Выбор юр/физ лицо
-    <div style={{ height: "10%" }}>
-      {regOptions.map((x, i) => (
+    <div style={{ height: "10%" }} className="nds-container">
+      {ndsOptions.map((x, i) => (
         <>
           <input
             type="radio"
             value={x}
             checked={selected === x}
             onChange={selectedHandler}
-            id={`reg-tab${i + 1}`}
-            name="reg-tab"
-            className="choice-reg-input"
+            id={`nds-tab${i + 1}`}
+            name="nds-tab"
+            className="choice-nds-input"
           />
-          <label key={i} htmlFor={`time-tab${i + 1}`} className="choiceReg">
+          <label key={i} htmlFor={`nds-tab${i + 1}`} className="choiceNDS">
             {x}
           </label>
-          {i !== regOptions.length - 1 && <div className="reg-palka" />}
         </>
       ))}
-      <div className="reg-line" />
+      <div className="nds-line" />
     </div>
 
     <div id="orderDetails">
       <div style={{ width: "50%" }}>
         <ChoiceNDS />
-        <ChoiceDelivery />
-        <h3>Адрес доставки</h3>
-        <p>3-я улица Строителей, д.25, кв.12</p>
+        <h3 className="address">Адрес доставки</h3>
+        <p className="address">3-я улица Строителей, д.25, кв.12</p>
       </div>
       <Map />
     </div>

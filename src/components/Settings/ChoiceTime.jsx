@@ -12,7 +12,6 @@ const ChoiceTime = () => {
   }
 
   return (
-    <>
       <div className="container">
         {timeOptions.map((x, i) => (
           <>
@@ -34,7 +33,6 @@ const ChoiceTime = () => {
 
         <div className="line" />
       </div>
-    </>
   )
 }
 
