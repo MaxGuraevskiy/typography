@@ -4,7 +4,6 @@
   position  : relative;
   font-size : 0;
   display   : flex;
-  overflow  : hidden;
 }
 
 .container>label.choiceTime {
@@ -19,7 +18,7 @@
   width        : 20%;
   margin-left  : 2.5%;
   margin-right : 2.5%;
-  top          : 34px;
+  top          : 39px;
   left         : 5%;
   transition   : 0.25s ease;
 }
@@ -35,10 +34,6 @@
 
 .choice-time-input {
   display: none;
-}
-
-input:checked+label.choiceTime {
-  /* background: #eee; */
 }
 
 input#time-tab1:checked~.line {
@@ -58,26 +53,29 @@ input#time-tab4:checked~.line {
 }
 
 label.choiceTime {
-  display       : inline-block;
-  font-size     : 16px;
-  height        : 36px;
-  line-height   : 36px;
-  width         : 25%;
-  text-align    : center;
-  /* background : #f4f4f4; */
-  color         : black;
-  position      : relative;
-  transition    : 0.25s background ease;
-  cursor        : pointer;
+  display    : inline-block;
+  font-size  : 16px;
+  height     : 41px;
+  line-height: 36px;
+  width      : 25%;
+  text-align : center;
+  color      : black;
+  position   : relative;
+  transition : 0.25s background ease;
+  cursor     : pointer;
 
-  font-family: Jost;
-  font-style : normal;
-  font-weight: normal;
-  font-size  : 24px;
-  line-height: 35px;
-  /* identical to box height */
-
+  font-family   : Jost;
+  font-style    : normal;
+  font-weight   : normal;
+  font-size     : 24px;
+  line-height   : 35px;
   letter-spacing: 0.02em;
+
+  -webkit-user-select: none;
+  -moz-user-select   : none;
+  -khtml-user-select : none;
+  -ms-user-select    : none;
+  user-select        : none;
 }
 
 label.choiceTime::after {
