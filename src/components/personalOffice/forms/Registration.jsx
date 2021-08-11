@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Registration = () => (
+const Registration = ({ setLogin }) => (
   <form id="loginForm">
     <input placeholder="Почта" type="email" />
     <hr className="divider" />
