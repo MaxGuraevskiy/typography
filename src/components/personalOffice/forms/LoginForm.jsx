@@ -1,7 +1,7 @@
 import React, { useState } from "react"
+import Registration from "./Registration";
 import Login from "./Login";
 import "./loginForm.css"
-import Registration from "./Registration";
 
 const LoginForm = ({ setLogin }) => {
   const [action, setAction] = useState("signIn")
@@ -29,7 +29,7 @@ const LoginForm = ({ setLogin }) => {
       {action === "signIn" && <Login setLogin={setLogin} />}
       {action === "signUp" && <Registration setLogin={setLogin} />}
     </div>
-  </>);
+  </>)
 }
 
 export default LoginForm;

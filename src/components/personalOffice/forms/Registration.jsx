@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Registration = ({ setLogin }) => (
-  <form id="loginForm">
-    <input placeholder="Почта" type="email" />
-    <hr className="divider" />
+const Registration = ({ setLogin }) => {
+  const [action, setAction] = useState("")
 
-    <input placeholder="Пароль" type="password" />
-    <hr className="divider" id="password" />
+  return (
+    <form id="loginForm">
+      <input placeholder="Почта" type="email" />
+      <hr className="divider" />
 
-    <div className="account-btn">
-      <button className="account-btn" id="loginSubmit" onClick={() => setLogin(true)}>
-        Войти
-      </button>
-    </div>
-  </form>)
+      <input placeholder="Пароль" type="password" />
+      <hr className="divider" id="password" />
 
-export default Registration;
+      <div className="account-btn">
+        <button className="account-btn" id="loginSubmit" onClick={() => setLogin(true)}>
+          Войти
+        </button>
+      </div>
+    </form>)
+}
+
+export default Registration
