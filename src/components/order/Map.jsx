@@ -2,8 +2,8 @@ import React from 'react';
 import { YMaps, Map as YMap, Placemark } from 'react-yandex-maps';
 
 const mapData = {
-  center: [55.751574, 37.573856],
-  zoom: 5,
+  center: [55.769545, 37.606613],
+  zoom: 15,
 };
 
 const coordinates = [
@@ -12,8 +12,8 @@ const coordinates = [
 
 const Map = () => {
   return (<div id="map">
-    <YMaps>
-      <YMap defaultState={mapData} className="">
+    <YMaps className="yandex-map">
+      <YMap defaultState={mapData} className="yandex-map">
         {coordinates.map(coordinate => <Placemark geometry={coordinate} />)}
       </YMap>
     </YMaps>
