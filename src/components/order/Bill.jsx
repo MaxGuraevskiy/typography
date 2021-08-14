@@ -1,5 +1,7 @@
 import React from "react"
+import { connect } from "react-redux";
 import angle from '../../images/angle.svg';
+import { makeOrder } from "../../redux/actions";
 
 import "./order.css"
 
@@ -25,11 +27,18 @@ const Bill = () => {
       <p className="bill" id="price">250 000₽</p>
     </div>
     <div id="makeOrderDiv">
-      <button id="makeOrder">Заказать</button>
+      <button id="makeOrder" onClick={() =>
+        makeOrder({ num: 20589, status: "Новый заказ" })}>
+        Заказать
+      </button>
     </div>
 
     <img id="angle" src={angle} alt="Уголочек" />
   </div>);
 }
 
-export default Bill
+const mapDispatchToProps = {
+  makeOrder
+}
+
+export default connect(null, mapDispatchToProps)(Bill)

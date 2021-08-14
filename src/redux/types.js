@@ -1,0 +1,1 @@
+export const MAKE_ORDER = "POST/MAKE_ORDER"

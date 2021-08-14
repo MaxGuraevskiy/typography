@@ -1,15 +1,21 @@
-import * as React from "react"
+import * as React from 'react'
+import { compose, createStore } from 'redux'
+import { Provider } from 'react-redux'
+import { rootReducer } from '../redux/rootReducer'
+import Header from '../components/common/Header'
+import Footer from '../components/common/Footer'
+import Order from '../components/order/Order'
+import Settings from '../components/Settings/Settings'
+import PersonalOffice from '../components/personalOffice/PersonalOffice'
+import './style.css'
 
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
+//TODO: сделать SEO на Helmet
 
-import PersonalOffice from '../components/personalOffice/PersonalOffice';
-import Settings from '../components/Settings/Settings';
-import Order from '../components/order/Order';
+const store = createStore(rootReducer, compose(
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+))
 
-import "./style.css"
-
-const IndexPage = () => (<>
+const IndexPage = () => (<Provider store={store}>
   <header children={<Header />} />
   <main>
     <div className="item" children={<PersonalOffice />} />
@@ -17,6 +23,6 @@ const IndexPage = () => (<>
     <div className="item" children={<Order />} />
   </main>
   <footer children={<Footer />} />
-</>)
+</Provider>)
 
 export default IndexPage

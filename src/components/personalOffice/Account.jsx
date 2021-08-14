@@ -1,23 +1,8 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+
 import loadOrder from '../../images/loadOrder.svg'
 import "./account.css"
-
-const orders = [
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" },
-  { num: 20589, status: "В процессе" }
-]
 
 const Order = ({ order, id, active, setActive }) => {
   return (<div onClick={() => setActive(id)}
@@ -28,7 +13,7 @@ const Order = ({ order, id, active, setActive }) => {
   </div>)
 }
 
-const Account = () => {
+const Account = ({ orders }) => {
   const [active, setActive] = useState()
 
   return (<>
@@ -47,4 +32,9 @@ const Account = () => {
   </>);
 }
 
-export default Account;
+const mapStateToProps = state => {
+  console.log(state);
+  return state.orders
+}
+
+export default connect(mapStateToProps, null)(Account)

@@ -252,4 +252,10 @@ p.userDetails {
   position: absolute;
   right   : 38.95%;
   bottom  : 70px;
+
+  -webkit-user-select: none;
+  -moz-user-select   : none;
+  -khtml-user-select : none;
+  -ms-user-select    : none;
+  user-select        : none;
 }
