@@ -11,7 +11,6 @@
     "bottom-left bottom-right";
   grid-template-rows   : 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-
 }
 
 .choice-format-container>:nth-child(1) {
@@ -51,7 +50,7 @@
 }
 
 /** Наведение и поведение */
-.choice-format-btn:hover {
+.choice-format-btn:hover:not(.choice-format-btn-selected) {
   background: var(--palette-lightgray);
 }
 
