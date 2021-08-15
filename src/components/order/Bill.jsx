@@ -1,11 +1,11 @@
 import React from "react"
 import { connect } from "react-redux";
-import angle from '../../images/angle.svg';
 import { makeOrder } from "../../redux/actions";
+import angle from '../../images/angle.svg';
 
 import "./order.css"
 
-const Bill = ({ finalPrice, userData }) => {
+const Bill = ({ finalPrice, userData, disabled, makeOrder }) => {
   return (<div id="bill">
     <h2 id="userName">{userData.fullName}</h2>
 
@@ -27,8 +27,7 @@ const Bill = ({ finalPrice, userData }) => {
       <p className="bill" id="price">{finalPrice}₽</p>
     </div>
     <div id="makeOrderDiv">
-      <button id="makeOrder" onClick={() =>
-        makeOrder({ num: 20589, status: "Новый заказ" })}>
+      <button id="makeOrder" onClick={makeOrder} disabled={disabled}>
         Заказать
       </button>
     </div>
@@ -38,20 +37,16 @@ const Bill = ({ finalPrice, userData }) => {
 }
 
 const mapDispatchToProps = {
-  makeOrder
+  makeOrder,
 }
 
 const mapStateToProps = state => {
-  const current = state.orders.orders[state.orders.currentOrder];
-  // console.log({
-  //   finalPrice: current.finalPrice,
-  //   userData: state.user
-  // });
+  const current = state.orders.orders[state.orders.currentOrder]
   return {
     finalPrice: current.finalPrice,
-    userData: state.user
+    userData: state.user,
+    disabled: current.office.num !== 0
   };
-  // return { value: current.time }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Bill)

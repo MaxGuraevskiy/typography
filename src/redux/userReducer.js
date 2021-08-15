@@ -7,5 +7,8 @@ const initial = {
 }
 
 export const userReducer = (state = initial, action) => {
-  return state;
+  console.log("userReducer", action.type);
+  switch (action.type) {
+    default: return state
+  }
 }

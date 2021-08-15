@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+import { connect } from 'react-redux';
 import ChoiceNDS from './ChoiceNDS';
 import Bill from './Bill';
 import Map from './Map';
 import './order.css'
-import { connect } from 'react-redux';
 
 const ndsOptions = ["Физическое лицо", "Юридическое лицо"]
 
 const Order = ({ address, registration }) => {
 
-  const [selected, setSelected] = useState(ndsOptions[registration])
-
   const selectedHandler = e => {
-    setSelected(e.target.value)
-    // console.log(e.target.checked)
+    // changeOrder("registration", ndsOptions.findIndex(x => x === e.target.value))
   }
 
   return (<>
@@ -23,7 +20,7 @@ const Order = ({ address, registration }) => {
         <input
           type="radio"
           value={x}
-          checked={selected === x}
+          checked={ndsOptions[registration] === x}
           onChange={selectedHandler}
           id={`nds-tab${i + 1}`}
           name="nds-tab"

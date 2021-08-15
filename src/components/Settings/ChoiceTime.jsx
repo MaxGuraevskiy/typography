@@ -1,15 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
+import { changeOrder } from "../../redux/actions"
 import { connect } from "react-redux"
 import "./choice-time-styles.css"
 
 const timeOptions = ["3ч", "6ч", "12ч", "24ч"]
 
-const ChoiceTime = ({ value }) => {
-  const [selected, setSelected] = useState(timeOptions[value])
+const ChoiceTime = ({ value, changeOrder }) => {
 
   const selectedHandler = e => {
-    setSelected(e.target.value)
-    console.log(e.target.checked)
+    changeOrder("time", timeOptions.findIndex(x => x === e.target.value))
   }
 
   return (
@@ -19,15 +18,17 @@ const ChoiceTime = ({ value }) => {
           <input
             type="radio"
             value={x}
-            checked={selected === x}
+            checked={timeOptions[value] === x}
             onChange={selectedHandler}
             id={`time-tab${i + 1}`}
             name="time-tab"
-            className="choice-time-input"
-          />
-          <label key={i} htmlFor={`time-tab${i + 1}`} className="choiceTime">
-            {x}
-          </label>
+            className="choice-time-input" />
+          <label
+            key={i}
+            htmlFor={`time-tab${i + 1}`}
+            className="choiceTime"
+            children={x} />
+
           {i !== timeOptions.length - 1 && <div className="palka" />}
         </>
       ))}
@@ -43,4 +44,4 @@ const mapStateToProps = state => {
   return { value: current.time }
 }
 
-export default connect(mapStateToProps, null)(ChoiceTime)
+export default connect(mapStateToProps, { changeOrder })(ChoiceTime)
