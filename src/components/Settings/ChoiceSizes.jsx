@@ -2,13 +2,16 @@ import React, { useState, useRef } from 'react';
 import "./choice-sizes-styles.css"
 import horizontall_line from '../../images/horizontall-line.svg'
 import useEventListener from './useEventListener';
+import { connect } from 'react-redux';
 
 const isValid = (value, min, max) => {
   return value !== '' && value >= min && value <= max;
 }
 
-const NaturalInput = ({ value, min, max, setValue, className, inputRef, setActive }) => {
+const NaturalInput = ({ value, setValue, className, inputRef, setActive }) => {
   const regexp = new RegExp(`^[0-9]*$`); //? new RegExp(`^-?[0-9]*$`);
+  const min = 0
+  const max = 100
 
   function onChange(e) {
     const newValue = +e.target.value;
@@ -36,9 +39,9 @@ const NaturalInput = ({ value, min, max, setValue, className, inputRef, setActiv
     />)
 }
 
-const InputSize = ({ sizeName, id }) => {
+const InputSize = ({ sizeName, id, initValue }) => {
   const [active, setActive] = useState(false)
-  const [value, setValue] = useState(0)
+  const [value, setValue] = useState(initValue)
   const ref = useRef(null)
 
   function logKey(e) {
@@ -62,10 +65,10 @@ const InputSize = ({ sizeName, id }) => {
 
   return (<div className="choice-size-item">
     <div className="choice-size-item-body" onClick={() => ref.current.focus()}>
-      <label className="paper-size" children={sizeName} />
+      <label className="paper-size" children={`${sizeName}:`} />
       <div className="choice-size-input-group">
         <label onClick={count(-1)} htmlFor={`size-tab${id}`} children={"-"} className="paper-size-count-minus" />
-        <NaturalInput min={0} max={100} id={`size-tab${id}`} inputRef={ref} className="choice-size-input" value={value} setValue={setValue} setActive={setActive} />
+        <NaturalInput inputRef={ref} id={`size-tab${id}`} className="choice-size-input" value={value} setValue={setValue} setActive={setActive} />
         <label onClick={count(+1)} htmlFor={`size-tab${id}`} children={"+"} className="paper-size-count-plus" />
       </div>
     </div>
@@ -73,14 +76,27 @@ const InputSize = ({ sizeName, id }) => {
   </div>)
 }
 
-const sizeOptions = ["A4:", "A3:", "A2:", "A1:", "A0:", "A0+:"]
+const sizeOptions = [
+  { value: "A4", name: "A4" },
+  { value: "A3", name: "A3" },
+  { value: "A2", name: "A2" },
+  { value: "A1", name: "A1" },
+  { value: "A0", name: "A0" },
+  { value: "A0_plus", name: "A0+" }
+]
 
-const ChoiceSizes = () => (
+const ChoiceSizes = ({ sizes }) => (
   <div className="choice-sizes-container">
     {sizeOptions.map((x, i) =>
-      <InputSize sizeName={x} id={i} key={i} />
+      <InputSize sizeName={x.name} initValue={sizes[x.value]} id={i} key={i} />
     )}
   </div>
 )
 
-export default ChoiceSizes;
+const mapStateToProps = state => {
+  const current = state.orders.orders[state.orders.currentOrder];
+  // console.log(current);
+  return current
+}
+
+export default connect(mapStateToProps, null)(ChoiceSizes)

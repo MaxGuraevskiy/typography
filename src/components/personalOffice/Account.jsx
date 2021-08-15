@@ -7,8 +7,8 @@ import "./account.css"
 const Order = ({ order, id, active, setActive }) => {
   return (<div onClick={() => setActive(id)}
     className={`order ${active === id ? "active" : ""}`}>
-    <h5 className="order-num" children={`№${order.num + id}`} />
-    <p className="order-status" children={order.status} />
+    <h5 className="order-num" children={`№${order.office.num + id}`} />
+    <p className="order-status" children={order.office.status} />
     <img className="order-download" src={loadOrder} alt="Загрузить" />
   </div>)
 }
@@ -33,7 +33,7 @@ const Account = ({ orders }) => {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return state.orders
 }
 

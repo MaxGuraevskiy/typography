@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { connect } from "react-redux"
 import "./choice-format-styles.css"
 
 const formatOptions = [
@@ -8,9 +9,9 @@ const formatOptions = [
   "Металлическая пружина"
 ]
 
-const ChoiceFormat = () => {
+const ChoiceFormat = ({ value }) => {
 
-  const [selected, setSelected] = useState(formatOptions[0])
+  const [selected, setSelected] = useState(formatOptions[value])
 
   return (
     <div className="choice-format-container">
@@ -23,4 +24,11 @@ const ChoiceFormat = () => {
     </div>)
 }
 
-export default ChoiceFormat
+
+const mapStateToProps = state => {
+  const current = state.orders.orders[state.orders.currentOrder];
+  // console.log(current);
+  return { value: current.format }
+}
+
+export default connect(mapStateToProps, null)(ChoiceFormat)

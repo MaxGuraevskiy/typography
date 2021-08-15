@@ -2,9 +2,10 @@ import React, { useState } from "react"
 
 import './choice-nds.css'
 
-import nds from "../../images/order-nds.svg"
+import ndsSVG from "../../images/order-nds.svg"
 import pickup from "../../images/order-pickup.svg"
 import delivery from "../../images/order-delivery.svg"
+import { connect } from "react-redux"
 
 const deliveryOptions = [
   { option: "Самовывоз", src: pickup },
@@ -12,9 +13,11 @@ const deliveryOptions = [
 ]
 const ndsOptions = ["С", "Без"]
 
-const ChoiceNDS = () => {
-  const [ndsSelected, setNdsSelected] = useState('C')
-  const [deliverySelected, setDeliverySelected] = useState('Самовывоз')
+const ChoiceNDS = ({ nds, delivery, registration }) => {
+  const [ndsSelected, setNdsSelected] = useState(ndsOptions[nds])
+  const [deliverySelected, setDeliverySelected] = useState(deliveryOptions[delivery].option)
+
+  // console.log(registration === 0, nds === 1, nds);
 
   return (
     <div className="nds-choice-container">
@@ -25,15 +28,14 @@ const ChoiceNDS = () => {
               className={"nds-box " + (ndsSelected === x ? "choice-delivery-btn-selected" : "")}
               onClick={() => setNdsSelected(x)}
               children={x}
+              disabled={registration === 0 && nds === 1 && i === 1}
             />
           ))}
         </div>
 
         <div className="nds-first-row-second-column">
-          <img src={nds} alt="nds" />
-          <label className="nds-label">
-            НДС
-          </label>
+          <img src={ndsSVG} alt="nds" />
+          <label className="nds-label">НДС</label>
         </div>
       </div >
 
@@ -52,4 +54,15 @@ const ChoiceNDS = () => {
     </div>)
 }
 
-export default ChoiceNDS
+const mapStateToProps = state => {
+  const current = state.orders.orders[state.orders.currentOrder];
+  // console.log(state);
+  return {
+    nds: current.nds,
+    delivery: current.delivery,
+    registration: state.user.registration
+  };
+}
+
+
+export default connect(mapStateToProps, null)(ChoiceNDS);
