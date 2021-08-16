@@ -11,18 +11,22 @@ import './style.css'
 
 //TODO: сделать SEO на Helmet
 
-const store = createStore(rootReducer, compose(
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-))
+const store = typeof window === `undefined` ? null :
+  createStore(rootReducer, compose(
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  ))
 
-const IndexPage = () => (<Provider store={store}>
-  <header children={<Header />} />
-  <main>
-    <div className="item" children={<PersonalOffice />} />
-    <div className="item" children={<Settings />} />
-    <div className="item" children={<Order />} />
-  </main>
-  <footer children={<Footer />} />
-</Provider>)
+const IndexPage = () => {
+  if (typeof window === `undefined`) return <></>
 
+  return (<Provider store={store}>
+    <header children={<Header />} />
+    <main>
+      <div className="item" children={<PersonalOffice />} />
+      <div className="item" children={<Settings />} />
+      <div className="item" children={<Order />} />
+    </main>
+    <footer children={<Footer />} />
+  </Provider>)
+}
 export default IndexPage
