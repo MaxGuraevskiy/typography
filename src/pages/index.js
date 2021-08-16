@@ -19,14 +19,17 @@ const store = typeof window === `undefined` ? null :
 const IndexPage = () => {
   if (typeof window === `undefined`) return <></>
 
-  return (<Provider store={store}>
-    <header children={<Header />} />
-    <main>
-      <div className="item" children={<PersonalOffice />} />
-      <div className="item" children={<Settings />} />
-      <div className="item" children={<Order />} />
-    </main>
-    <footer children={<Footer />} />
-  </Provider>)
+  return (
+
+    <Provider store={store}>
+      <header children={<Header />} />
+      <main>
+        <div className="item" children={<PersonalOffice />} />
+        <div className="item" children={<Settings />} />
+        <div className="item" children={<Order />} />
+      </main>
+      <footer children={<Footer />} />
+    </Provider>
+  )
 }
 export default IndexPage

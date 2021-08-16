@@ -16,7 +16,7 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement('#main');
+Modal.setAppElement('#___gatsby');
 
 const Footer = _ => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
@@ -54,11 +54,11 @@ const Footer = _ => {
           </p>
           <Modal
             isOpen={modalIsOpen}
-            onRequestClose={() => closeModal()}
+            onRequestClose={closeModal}
             style={customStyles}
             contentLabel="Example Modal"
           >
-            <p> модальное окно ыыыыы</p>
+            <p>модальное окно ыыыыы</p>
             <button onClick={closeModal}>close</button>
           </Modal>
         </div>
