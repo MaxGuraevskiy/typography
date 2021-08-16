@@ -11,7 +11,7 @@ import "./style.css"
 
 const IndexPage = () => (<>
   <header children={<Header />} />
-  <main>
+  <main id="main">
     <div className="item" children={<PersonalOffice />} />
     <div className="item" children={<Settings />} />
     <div className="item" children={<Order />} />
