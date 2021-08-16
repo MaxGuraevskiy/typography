@@ -55,8 +55,10 @@ const Footer = _ => {
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
-            style={customStyles}
+            // style={customStyles}
             contentLabel="Example Modal"
+            className="Modal"
+            overlayClassName="Overlay"
           >
             <p>модальное окно ыыыыы</p>
             <button onClick={closeModal}>close</button>

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { YMaps, Map as YMap, Placemark, SearchControl, GeolocationControl, } from 'react-yandex-maps';
+import { YMaps, Map as YMap, Placemark, SearchControl, GeolocationControl,} from 'react-yandex-maps';
 import { connect } from 'react-redux';
 
 const mapData = {
@@ -73,8 +73,8 @@ const coordinates = [
 const Map = () => {
   const searchRef = useRef(null);
   return (<div id="map">
-    <YMaps className="yandex-map" >
-      <YMap defaultState={mapData} className="yandex-map" on>
+    <YMaps className="yandex-map">
+      <YMap defaultState={mapData} className="yandex-map">
         <SearchControl
           instanceRef={(ref) => {
             if (ref) searchRef.current = ref;
