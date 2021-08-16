@@ -26,6 +26,7 @@ div.order {
   background-color: rgba(240, 240, 240, 1);
   align-content   : center;
   flex-wrap       : wrap;
+  cursor          : pointer;
 }
 
 div.order:hover {

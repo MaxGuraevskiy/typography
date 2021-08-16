@@ -1,39 +1,47 @@
-import React, { useState } from "react"
+import React from "react"
+import { changeOrder } from "../../redux/actions"
+import { connect } from "react-redux"
 import "./choice-time-styles.css"
 
 const timeOptions = ["3ч", "6ч", "12ч", "24ч"]
 
-const ChoiceTime = () => {
-  const [selected, setSelected] = useState("3ч")
+const ChoiceTime = ({ value, changeOrder }) => {
 
   const selectedHandler = e => {
-    setSelected(e.target.value)
-    console.log(e.target.checked)
+    changeOrder("time", timeOptions.findIndex(x => x === e.target.value))
   }
 
   return (
-      <div className="container">
-        {timeOptions.map((x, i) => (
-          <>
-            <input
-              type="radio"
-              value={x}
-              checked={selected === x}
-              onChange={selectedHandler}
-              id={`time-tab${i + 1}`}
-              name="time-tab"
-              className="choice-time-input"
-            />
-            <label key={i} htmlFor={`time-tab${i + 1}`} className="choiceTime">
-              {x}
-            </label>
-            {i !== timeOptions.length - 1 && <div className="palka" />}
-          </>
-        ))}
+    <div className="container">
+      {timeOptions.map((x, i) => (
+        <>
+          <input
+            type="radio"
+            value={x}
+            checked={timeOptions[value] === x}
+            onChange={selectedHandler}
+            id={`time-tab${i + 1}`}
+            name="time-tab"
+            className="choice-time-input" />
+          <label
+            key={i}
+            htmlFor={`time-tab${i + 1}`}
+            className="choiceTime"
+            children={x} />
 
-        <div className="line" />
-      </div>
+          {i !== timeOptions.length - 1 && <div className="palka" />}
+        </>
+      ))}
+
+      <div className="line" />
+    </div>
   )
 }
 
-export default ChoiceTime
+const mapStateToProps = state => {
+  const current = state.orders.orders[state.orders.currentOrder];
+  // console.log(current);
+  return { value: current.time }
+}
+
+export default connect(mapStateToProps, { changeOrder })(ChoiceTime)
