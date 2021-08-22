@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { YMaps, Map, Placemark, SearchControl, GeolocationControl } from 'react-yandex-maps';
 import { connect } from 'react-redux';
 
@@ -13,15 +13,18 @@ const MyMap = () => {
   const [coordinates, setCoordinates] = useState(mapData.center)
 
   const clickOnMap = (e) => {
-    console.log(coordinates)
-    var coords = e.get('coords')
-    console.log(coords)
-    // setCoordinates(coords)
+    const coords = e.get('coords')
+    console.log(coordinates, "→", coords)
+    setCoordinates(coords)
   }
 
   return (<div id="map">
     <YMaps className="yandex-map" >
-      <Map modules={['geocode']} defaultState={mapData} className="yandex-map" instanceRef={inst => inst.events.add('click', clickOnMap)} >
+      <Map
+        modules={['geocode']}
+        defaultState={mapData}
+        className="yandex-map"
+        instanceRef={inst => inst?.events?.add('click', clickOnMap)} >
 
         <SearchControl
           instanceRef={(ref) => {
