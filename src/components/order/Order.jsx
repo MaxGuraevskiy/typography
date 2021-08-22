@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ChoiceNDS from './ChoiceNDS';
 import Bill from './Bill';
-import Map from './Map';
+import MyMap from './MyMap';
 import './order.css'
 
 const ndsOptions = ["Физическое лицо", "Юридическое лицо"]
@@ -39,7 +39,7 @@ const Order = ({ address, registration }) => {
         <h3 className="address">Адрес доставки</h3>
         <p className="address">{address}</p>
       </div>
-      <Map />
+      <MyMap />
     </div>
 
     <Bill />
