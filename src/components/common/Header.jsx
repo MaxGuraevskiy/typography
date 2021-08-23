@@ -1,5 +1,14 @@
 import React from "react"
+import { DateFromTime } from "@formatjs/ecma402-abstract"
 import "./header-styles.css"
+
+function getDate() {
+  const options = { day: 'numeric', year: 'numeric', month: 'long' };
+  const date = new Date()
+  return (
+    date.toLocaleDateString('ru-RU', options)
+  )
+}
 
 const Header = _ => {
   return (
@@ -11,7 +20,7 @@ const Header = _ => {
         </div>
         <div className="header-item">
           <div className="date-block">
-            <p className="text date-text">12 сентября, 2021г.</p>
+            <p className="text date-text">{getDate()}</p>
           </div>
         </div>
       </div>
