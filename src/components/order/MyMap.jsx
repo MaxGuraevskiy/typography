@@ -24,7 +24,11 @@ const MyMap = () => {
         modules={['control.ZoomControl', 'control.FullscreenControl', 'geocode']}
         defaultState={mapData}
         className="yandex-map"
-        instanceRef={inst => inst?.events?.add('click', clickOnMap)}
+        instanceRef={inst => {
+          if (!inst?.events?.types?.click
+            .some(x => x?.name === "clickOnMap"))
+            inst?.events?.add('click', clickOnMap)
+        }}
       >
 
         <SearchControl
