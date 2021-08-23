@@ -1,11 +1,11 @@
 import React, { useRef, useState } from 'react';
-// import ReactDOM from "react-dom";
 import { YMaps, Map, Placemark, SearchControl, GeolocationControl } from 'react-yandex-maps';
 import { connect } from 'react-redux';
 
 const mapData = {
   center: [55.769545, 37.606613],
   zoom: 15,
+  controls: ['zoomControl', 'fullscreenControl'],
 }
 
 const MyMap = () => {
@@ -19,62 +19,35 @@ const MyMap = () => {
   }
 
   return (<div id="map">
-    <YMaps className="yandex-map" >
+    <YMaps className="yandex-map" enterprise query={{ apikey: '81d53001-bd1e-4fff-8cd6-6ea1533aeb5a', lang: 'ru_RU' }}>
       <Map
-        modules={['geocode']}
+        modules={['control.ZoomControl', 'control.FullscreenControl', 'geocode']}
         defaultState={mapData}
         className="yandex-map"
-        instanceRef={inst => inst?.events?.add('click', clickOnMap)} >
+        instanceRef={inst => inst?.events?.add('click', clickOnMap)}
+      >
 
         <SearchControl
           instanceRef={(ref) => {
             if (ref) searchRef.current = ref;
           }}
+          options={{ float: 'right' }}
         />
         <GeolocationControl options={{ float: 'left' }} />
 
         <Placemark
+          modules={['geoObject.addon.balloon']}
           // key={coordinates.join(",")}
           geometry={coordinates}
+          properties={{
+            balloonContentBody:
+              'Это выбранная вами точка доставки',
+          }}
         />
       </Map>
     </YMaps>
   </div>)
 }
-
-// class MyMap extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       coords: []
-//     };
-//   }
-
-//   onMapClick(event) {
-//     this.setState((state) => {
-//       return {
-//         coords: [event.get("coords")]
-//       };
-//     });
-//   }
-
-//   render() {
-//     return (
-//       <YMaps>
-//         <Map onClick={this.onMapClick.bind(this)}>
-//           {this.state.coords.map((coords) => (
-//             <Placemark
-//               geometry={coords}
-//             />
-//           ))}
-//         </Map>
-//       </YMaps>
-//     );
-//   }
-// }
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<MyMap />, rootElement);
 
 const mapStateToProps = state => {
   const current = state.orders.orders[state.orders.currentOrder];
