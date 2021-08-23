@@ -1,5 +1,4 @@
 import React from "react"
-import { DateFromTime } from "@formatjs/ecma402-abstract"
 import "./header-styles.css"
 
 function getDate() {
