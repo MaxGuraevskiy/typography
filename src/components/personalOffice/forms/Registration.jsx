@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
+import app from '../../base'
+
 
 const regOptions = ["Физическое", "Юридическое"]
 
@@ -33,7 +35,22 @@ const Registration = ({ setLogin }) => {
     setReg(e.target.value)
   }
 
-  return (<form id="registrationForm">
+  const handleSignUp = useCallback(async event => {
+    event.preventDefault()
+    const { email, password } = event.target.elements
+    try {
+      await app
+        .auth()
+        .createUserWithEmailAndPassword(email.value, password.value)
+      // history.pushState('/')
+      setLogin(true)
+    }
+    catch (e) {
+      alert(e)
+    }
+  }, [])
+
+  return (<form id="registrationForm" onSubmit={handleSignUp}>
 
     <div className="reg-container">
       {regOptions.map((x, i) => (
@@ -89,7 +106,7 @@ const Registration = ({ setLogin }) => {
     </div>}
 
     <div className="account-btn">
-      <button className="account-btn" id="loginSubmit" onClick={() => setLogin(true)}>
+      <button className="account-btn" id="loginSubmit" type='submit'>
         Зарегистрироваться
       </button>
     </div>
