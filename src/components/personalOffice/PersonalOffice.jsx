@@ -6,15 +6,7 @@ import "./personalOffice.css"
 
 import logout from "../../images/logout.svg"
 
-import app from './base'
-// import { getAuth, signOut } from "firebase/auth";
-
-// const auth = getAuth();
-// signOut(auth).then(() => {
-//   // Sign-out successful.
-// }).catch((error) => {
-//   // An error happened.
-// });
+import app from '../base'
 
 const PersonalOffice = () => {
   const [login, setLogin] = useState(false)
@@ -28,7 +20,7 @@ const PersonalOffice = () => {
             <img className="account-form-header" alt="Выйти" src={logout}
               onClick={() => {
                 setLogin(false)
-                // app.auth().signOut()
+                app.auth().signOut()
               }} />}
         </div>
         {login ? <Account /> : <LoginForm setLogin={setLogin} />}
