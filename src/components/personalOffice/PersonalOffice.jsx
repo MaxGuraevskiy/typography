@@ -6,6 +6,16 @@ import "./personalOffice.css"
 
 import logout from "../../images/logout.svg"
 
+import app from './base'
+// import { getAuth, signOut } from "firebase/auth";
+
+// const auth = getAuth();
+// signOut(auth).then(() => {
+//   // Sign-out successful.
+// }).catch((error) => {
+//   // An error happened.
+// });
+
 const PersonalOffice = () => {
   const [login, setLogin] = useState(false)
 
@@ -16,7 +26,10 @@ const PersonalOffice = () => {
           <h4 className="account-form-header">Личный кабинет</h4>
           {login &&
             <img className="account-form-header" alt="Выйти" src={logout}
-              onClick={() => setLogin(false)} />}
+              onClick={() => {
+                setLogin(false)
+                // app.auth().signOut()
+              }} />}
         </div>
         {login ? <Account /> : <LoginForm setLogin={setLogin} />}
       </section>
